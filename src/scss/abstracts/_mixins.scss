@@ -1,0 +1,80 @@
+@use "./variables" as *;
+
+@mixin page-container-styles {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin page-header {
+  text-transform: uppercase;
+  .page-title,
+  .page-description {
+    margin: 12px 0;
+  }
+
+  .page-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+@mixin header-banner-styles {
+  background-size: cover;
+  box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 24px;
+  padding: 30px;
+  border: 5px solid white;
+  text-transform: uppercase;
+  color: #fff;
+
+  .Mabunda-Group-image {
+      height: 80px;
+  }
+
+  .title-name {
+      font-size: $global-font-size + 8px;
+      padding: 8px 0;
+  }
+
+  .banner-button {
+      color: #fff;
+      padding: 5px 30px;
+      margin: 5px 0;
+      border: 1px solid lightgrey;
+
+      &:hover {
+          background-color: orange;
+          border-color: orange;
+      }
+  }
+}
+
+@mixin page-content-description-styles {
+  padding-top: 30px;
+  margin: 0 150px;
+  font-size: $global-font-size + 1;
+
+  .content-title {
+      margin-bottom: 20px;
+      text-transform: uppercase;
+  }
+
+  .content-description{
+      margin-bottom: 20px;
+  }
+
+  .content-description-underline {
+      width: 100%;
+      margin: 0 auto;
+  }
+}
+
+@mixin element-box-shadow {
+  -webkit-box-shadow: 0px 0px 27px 11px rgba(0,0,0,0.59);
+  -moz-box-shadow: 0px 0px 27px 11px rgba(0,0,0,0.59);
+  box-shadow: 0px 0px 27px 11px rgba(0,0,0,0.59);
+}
+
+@mixin icon-styles {
+  color: $icon-color;
+  margin-right: 5px;
+}

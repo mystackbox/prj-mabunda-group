@@ -1,0 +1,105 @@
+@use '../abstracts' as *;
+
+#home-page-container {
+
+    @include page-container-styles;
+
+    .header-banner {
+        background-image: url('/banners/2.jpg');
+        @include header-banner-styles;
+    }
+
+    .page-content-description {
+        @include page-content-description-styles;
+    }
+
+    .content-section {
+        padding: 5px 50px;
+        margin-bottom: 20px;
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+
+            .card-container {
+                padding: 10px 6px;
+                border-radius: 7px;
+                margin: 5px 0;
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                text-align: center;
+                min-width: 100px;
+                min-height: 16vh;
+
+                .card-image,
+                .card-text,
+                .card-btn {
+                    margin: 8px 0;
+                }
+
+                .card-image {
+                    height: 40px;
+                }
+
+                .card-text {
+                    text-transform: uppercase;
+                }
+
+                .card-btn {
+                    background-color: orange;
+                    border: none;
+                    padding: 3px 20px;
+                    color: #fff;
+                    min-width: 120px;
+
+                    &:hover {
+                        background-color: red;
+                    }
+                }
+
+                &:hover {
+                    box-shadow: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+
+    #home-page-container {
+        .header-banner {
+            .Mabunda-Group-image {
+                height: 60px;
+            }
+        }
+
+        .page-content-description {
+            margin: 0 20px;
+        }
+
+        .content-section {
+            margin: 0px 12px;
+            padding: 5px 0 0 0;
+
+            .cards-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                margin: 20 10px 0 10px;
+
+                .card-container {
+                    border-radius: 0px;
+
+                    .card-btn {
+                        padding: 3px 20px;
+                        min-width: 100px;
+                    }
+                }
+            }
+        }
+    }
+}

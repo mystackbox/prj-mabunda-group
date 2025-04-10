@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+/*  Rest to default setting */
+* {
+        margin: 0;
+        padding: 0;
+        font-size: $global-font-size;
+}
+
+body {
+        // background-image: url('/bg-img/wall-tones-bg8.jpg');
+        // background-size: 30%;
+        // background-repeat: repeat;
+        // background-attachment: fixed;
+
+        background-image: url('/img/wall-tones-bg1.jpg');
+        background-size: 25%;
+        background-repeat: repeat;
+        background-attachment: fixed;
+}
+    

@@ -1,0 +1,115 @@
+@use '../abstracts' as *;
+
+#services-page-container {
+
+    display: flex;
+    flex-direction: column;
+
+    .header-banner {
+        background-image: url('/banners/3.jpg');
+        @include header-banner-styles;
+    }
+
+    .page-content-description {
+        @include page-content-description-styles;
+    }
+
+    .content-section {
+        padding: 15px 15px 0 15px;
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            margin: 10px 40px 5px 40px;
+
+            .card-container {
+                padding: 10px;
+                border-radius: 7px;
+                margin: 0 15px;
+
+                .card-image,
+                .card-text,
+                .card-btn {
+                    margin: 5px 0;
+                }
+
+                .card-image {
+                    height: 30px;
+                }
+
+                .card-text {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    color: olivedrab;
+                }
+
+                .services {
+                    padding-bottom: 5px;
+                    color: grey;
+                }
+
+                &:hover {
+                    box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 24px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 579px) {
+
+    #services-page-container {
+        .header-banner {
+            .Mabunda-Group-image {
+                height: 60px;
+            }
+        }
+
+        .page-content-description {
+            margin: 0 10px;
+        }
+
+        .content-section {
+            padding-top: 10px;
+
+            .cards-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                margin: 0;
+
+                .card-container {
+                    border-bottom: 1px solid lightgray;
+                    border-radius: 0px;
+
+                    &:hover {
+                        border-bottom: none;
+                        border-radius: 7px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 580px) and (max-width: 760px) {
+    #services-page-container {
+
+        .header-banner {
+            .Mabunda-Group-image {
+                height: 60px;
+            }
+        }
+
+        .page-content-description {
+            margin: 0 50px;
+        }
+
+        .content-section {
+            .cards-container {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    }
+}

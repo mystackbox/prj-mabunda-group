@@ -1,0 +1,128 @@
+@use '../abstracts' as *;
+
+#notfound-page-container {
+
+    @include page-container-styles;
+
+    .header-banner {
+        background-image: url('/banners/7.jpg');
+        @include header-banner-styles;
+    }
+
+    .page-content-description {
+        @include page-content-description-styles;
+    }
+
+    .content-section {
+        margin-top: 10px;
+
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+
+            padding: 20px 30px;
+
+            .description-section {
+                margin: auto;
+                max-width: 700px;
+                font-size: $global-font-size + 5;
+
+                .desc-heading {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    color: green;
+                }
+
+            }
+        }
+
+        .card-container {
+
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 7px;
+            padding: 10px;
+            text-align: center;
+            min-width: 170px;
+            margin-bottom: 5px;
+
+            .card-image,
+            .card-text,
+            .card-btn {
+                margin: 8px 0;
+            }
+
+            .card-image {
+                height: 40px;
+            }
+
+            .card-text {
+                font-weight: bold;
+            }
+
+            .card-btn {
+                background-color: brown;
+                border: none;
+                padding: 3px 20px;
+                color: #fff;
+                min-width: 130px;
+
+                &:hover {
+                    background-color: orange;
+                }
+            }
+
+            &:hover {
+                box-shadow: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    #about-page-container {
+
+        .header-banner {
+            .Mabunda-Group-image {
+                height: 60px;
+            }
+        }
+
+        .page-content-description {
+            margin: 0 40px;
+        }
+
+
+        .content-section {
+            .cards-container {
+                flex-direction: column;
+
+                .card-container {
+                    .card-btn {
+                        padding: 4px 50px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 700px){
+
+    #about-page-container {
+
+        .header-banner {
+            .Mabunda-Group-image {
+                height: 60px;
+            }
+        }
+
+        .page-content-description {
+            margin: 0 80px;
+        }
+
+    }
+}

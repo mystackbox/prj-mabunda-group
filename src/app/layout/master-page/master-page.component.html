@@ -1,0 +1,28 @@
+<div class="master-page-container">
+
+  <!--Grid-Layout container-->
+  <div class="master-page-grid">
+
+    <!--navbar grid-area-->
+    <section class="navbar-container grid-area">
+      <app-nav-bar></app-nav-bar>
+    </section>
+
+    <!--header grid-area-->
+    <header class="header-container grid-area">
+      <app-header></app-header>
+    </header>
+
+    <!--page-content grid-area-->
+    <section class="page-content-container grid-area">
+          <router-outlet></router-outlet>
+    </section>
+
+     <!--footer grid-area-->
+    <footer class="footer-container grid-area">
+      <app-footer></app-footer>
+    </footer>
+
+  </div>
+
+</div>

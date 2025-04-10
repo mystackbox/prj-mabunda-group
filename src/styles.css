@@ -1,0 +1,789 @@
+/* include all _partials from the following directories: */
+/* You can add global styles to this file, and also import other style files */
+/* FONT STYLES 
+-----------------------------------------
+*/
+/* Font size */
+/* Font color */
+/* LAYOUT STYLES
+-----------------------------------------
+*/
+/* Border radius */
+/* Layouts gaps */
+/* Background color */
+/* FORM STYLES
+-----------------------------------------
+*
+/* textbox */
+/* placeholder */
+/* error messages */
+/* ICONS STYLES
+-----------------------------------------
+*/
+/* bind the following _partials to scss/styles.scss */
+/* include all _partials from the following directories: */
+/* You can add global styles to this file, and also import other style files */
+/*  Rest to default setting */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+body {
+  background-image: url("/img/wall-tones-bg1.jpg");
+  background-size: 25%;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+/* include all _partials from the following directories: */
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+/* include all _partials from the following directories: */
+/* You can add global styles to this file, and also import other style files */
+.brand-icon {
+  color: green;
+  margin-right: 1px;
+}
+
+.nav-link:hover {
+  color: lightgrey;
+}
+.nav-link:focus {
+  color: red;
+}
+
+@media screen and (max-width: 992px) {
+  .navbar .navbar-brand {
+    font-weight: bold;
+  }
+  .navbar button {
+    margin-bottom: 5px;
+  }
+  .navbar .navbar-nav {
+    text-align: left;
+  }
+  .navbar .navbar-nav .nav-link {
+    border-top: 1px solid rgba(149, 157, 165, 0.3);
+  }
+}
+@media screen and (min-width: 992px) {
+  .navbar-brand {
+    display: none;
+  }
+}
+/* include all _partials from the following directories: */
+/* You can add global styles to this file, and also import other style files */
+/*  Site header */
+.header-section {
+  text-transform: uppercase;
+}
+.header-section .page-title,
+.header-section .page-description {
+  margin: 12px 0;
+}
+.header-section .page-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* include all _partials from the following directories: */
+/* You can add global styles to this file, and also import other style files */
+/*  
+    Grid layout structure 
+    Mobile-first approach
+*/
+.master-page-container {
+  margin: auto;
+  max-width: 900px;
+  -webkit-box-shadow: 0px 0px 27px 11px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 0px 0px 27px 11px rgba(0, 0, 0, 0.59);
+  box-shadow: 0px 0px 27px 11px rgba(0, 0, 0, 0.59);
+}
+.master-page-container .master-page-grid {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "navbar" "header" "main" "footer";
+}
+
+.grid-area {
+  background-color: #fff;
+  padding: 15px;
+}
+
+/* Navbar Grid Area */
+.navbar-container {
+  grid-area: navbar;
+  padding: 0px;
+  background-color: #f8f9fa;
+}
+
+/* Header Grid Area */
+.header-container {
+  grid-area: header;
+}
+
+/* Page Main Area */
+.page-content-container {
+  background-color: #fff;
+  grid-area: main;
+}
+
+/* Footer Grid Area */
+.footer-container {
+  grid-area: footer;
+  background-color: #f8f9fa;
+}
+
+/* include all _partials from the following directories: */
+/* You can add global styles to this file, and also import other style files */
+/*  Site footer */
+.float {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  bottom: 45px;
+  right: 23px;
+  background-color: #25d366;
+  color: #002;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 20px;
+  box-shadow: 2px 2px 11px #999;
+  z-index: 100;
+}
+
+.my-float {
+  margin-top: 10px;
+}
+
+.spinner {
+  text-align: center;
+}
+.spinner img {
+  height: 50px;
+  margin-top: 130px;
+}
+.spinner .loading-text {
+  color: lightgrey;
+  font-weight: bold;
+}
+
+.spinner-container {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 20%;
+  cursor: pointer;
+}
+
+/* include all _partials from the following directories: */
+/* You can add global styles to this file, and also import other style files */
+#home-page-container {
+  display: flex;
+  flex-direction: column;
+}
+#home-page-container .header-banner {
+  background-image: url("/banners/2.jpg");
+  background-size: cover;
+  box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 24px;
+  padding: 30px;
+  border: 5px solid white;
+  text-transform: uppercase;
+  color: #fff;
+}
+#home-page-container .header-banner .Mabunda-Group-image {
+  height: 80px;
+}
+#home-page-container .header-banner .title-name {
+  font-size: 22px;
+  padding: 8px 0;
+}
+#home-page-container .header-banner .banner-button {
+  color: #fff;
+  padding: 5px 30px;
+  margin: 5px 0;
+  border: 1px solid lightgrey;
+}
+#home-page-container .header-banner .banner-button:hover {
+  background-color: orange;
+  border-color: orange;
+}
+#home-page-container .page-content-description {
+  padding-top: 30px;
+  margin: 0 150px;
+  font-size: 15px;
+}
+#home-page-container .page-content-description .content-title {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+#home-page-container .page-content-description .content-description {
+  margin-bottom: 20px;
+}
+#home-page-container .page-content-description .content-description-underline {
+  width: 100%;
+  margin: 0 auto;
+}
+#home-page-container .content-section {
+  padding: 5px 50px;
+  margin-bottom: 20px;
+}
+#home-page-container .content-section .cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+#home-page-container .content-section .cards-container .card-container {
+  padding: 10px 6px;
+  border-radius: 7px;
+  margin: 5px 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  text-align: center;
+  min-width: 100px;
+  min-height: 16vh;
+}
+#home-page-container .content-section .cards-container .card-container .card-image,
+#home-page-container .content-section .cards-container .card-container .card-text,
+#home-page-container .content-section .cards-container .card-container .card-btn {
+  margin: 8px 0;
+}
+#home-page-container .content-section .cards-container .card-container .card-image {
+  height: 40px;
+}
+#home-page-container .content-section .cards-container .card-container .card-text {
+  text-transform: uppercase;
+}
+#home-page-container .content-section .cards-container .card-container .card-btn {
+  background-color: orange;
+  border: none;
+  padding: 3px 20px;
+  color: #fff;
+  min-width: 120px;
+}
+#home-page-container .content-section .cards-container .card-container .card-btn:hover {
+  background-color: red;
+}
+#home-page-container .content-section .cards-container .card-container:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 680px) {
+  #home-page-container .header-banner .Mabunda-Group-image {
+    height: 60px;
+  }
+  #home-page-container .page-content-description {
+    margin: 0 20px;
+  }
+  #home-page-container .content-section {
+    margin: 0px 12px;
+    padding: 5px 0 0 0;
+  }
+  #home-page-container .content-section .cards-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 20 10px 0 10px;
+  }
+  #home-page-container .content-section .cards-container .card-container {
+    border-radius: 0px;
+  }
+  #home-page-container .content-section .cards-container .card-container .card-btn {
+    padding: 3px 20px;
+    min-width: 100px;
+  }
+}
+/* include all _partials from the following directories: */
+/* You can add global styles to this file, and also import other style files */
+#about-page-container {
+  display: flex;
+  flex-direction: column;
+}
+#about-page-container .header-banner {
+  background-image: url("/banners/1.jpg");
+  background-size: cover;
+  box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 24px;
+  padding: 30px;
+  border: 5px solid white;
+  text-transform: uppercase;
+  color: #fff;
+}
+#about-page-container .header-banner .Mabunda-Group-image {
+  height: 80px;
+}
+#about-page-container .header-banner .title-name {
+  font-size: 22px;
+  padding: 8px 0;
+}
+#about-page-container .header-banner .banner-button {
+  color: #fff;
+  padding: 5px 30px;
+  margin: 5px 0;
+  border: 1px solid lightgrey;
+}
+#about-page-container .header-banner .banner-button:hover {
+  background-color: orange;
+  border-color: orange;
+}
+#about-page-container .page-content-description {
+  padding-top: 30px;
+  margin: 0 150px;
+  font-size: 15px;
+}
+#about-page-container .page-content-description .content-title {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+#about-page-container .page-content-description .content-description {
+  margin-bottom: 20px;
+}
+#about-page-container .page-content-description .content-description-underline {
+  width: 100%;
+  margin: 0 auto;
+}
+#about-page-container .content-section {
+  margin-top: 10px;
+}
+#about-page-container .content-section .about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 30px;
+}
+#about-page-container .content-section .about-container .description-section {
+  margin: auto;
+  max-width: 700px;
+  font-size: 19px;
+}
+#about-page-container .content-section .about-container .description-section .desc-heading {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: green;
+}
+#about-page-container .content-section .card-container {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 7px;
+  padding: 10px;
+  text-align: center;
+  min-width: 170px;
+  margin-bottom: 5px;
+}
+#about-page-container .content-section .card-container .card-image,
+#about-page-container .content-section .card-container .card-text,
+#about-page-container .content-section .card-container .card-btn {
+  margin: 8px 0;
+}
+#about-page-container .content-section .card-container .card-image {
+  height: 40px;
+}
+#about-page-container .content-section .card-container .card-text {
+  font-weight: bold;
+}
+#about-page-container .content-section .card-container .card-btn {
+  background-color: brown;
+  border: none;
+  padding: 3px 20px;
+  color: #fff;
+  min-width: 130px;
+}
+#about-page-container .content-section .card-container .card-btn:hover {
+  background-color: orange;
+}
+#about-page-container .content-section .card-container:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  #about-page-container .header-banner .Mabunda-Group-image {
+    height: 60px;
+  }
+  #about-page-container .page-content-description {
+    margin: 0 40px;
+  }
+  #about-page-container .content-section .cards-container {
+    flex-direction: column;
+  }
+  #about-page-container .content-section .cards-container .card-container .card-btn {
+    padding: 4px 50px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 700px) {
+  #about-page-container .header-banner .Mabunda-Group-image {
+    height: 60px;
+  }
+  #about-page-container .page-content-description {
+    margin: 0 80px;
+  }
+}
+/* include all _partials from the following directories: */
+/* You can add global styles to this file, and also import other style files */
+#services-page-container {
+  display: flex;
+  flex-direction: column;
+}
+#services-page-container .header-banner {
+  background-image: url("/banners/3.jpg");
+  background-size: cover;
+  box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 24px;
+  padding: 30px;
+  border: 5px solid white;
+  text-transform: uppercase;
+  color: #fff;
+}
+#services-page-container .header-banner .Mabunda-Group-image {
+  height: 80px;
+}
+#services-page-container .header-banner .title-name {
+  font-size: 22px;
+  padding: 8px 0;
+}
+#services-page-container .header-banner .banner-button {
+  color: #fff;
+  padding: 5px 30px;
+  margin: 5px 0;
+  border: 1px solid lightgrey;
+}
+#services-page-container .header-banner .banner-button:hover {
+  background-color: orange;
+  border-color: orange;
+}
+#services-page-container .page-content-description {
+  padding-top: 30px;
+  margin: 0 150px;
+  font-size: 15px;
+}
+#services-page-container .page-content-description .content-title {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+#services-page-container .page-content-description .content-description {
+  margin-bottom: 20px;
+}
+#services-page-container .page-content-description .content-description-underline {
+  width: 100%;
+  margin: 0 auto;
+}
+#services-page-container .content-section {
+  padding: 15px 15px 0 15px;
+}
+#services-page-container .content-section .cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  margin: 10px 40px 5px 40px;
+}
+#services-page-container .content-section .cards-container .card-container {
+  padding: 10px;
+  border-radius: 7px;
+  margin: 0 15px;
+}
+#services-page-container .content-section .cards-container .card-container .card-image,
+#services-page-container .content-section .cards-container .card-container .card-text,
+#services-page-container .content-section .cards-container .card-container .card-btn {
+  margin: 5px 0;
+}
+#services-page-container .content-section .cards-container .card-container .card-image {
+  height: 30px;
+}
+#services-page-container .content-section .cards-container .card-container .card-text {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: olivedrab;
+}
+#services-page-container .content-section .cards-container .card-container .services {
+  padding-bottom: 5px;
+  color: grey;
+}
+#services-page-container .content-section .cards-container .card-container:hover {
+  box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 579px) {
+  #services-page-container .header-banner .Mabunda-Group-image {
+    height: 60px;
+  }
+  #services-page-container .page-content-description {
+    margin: 0 10px;
+  }
+  #services-page-container .content-section {
+    padding-top: 10px;
+  }
+  #services-page-container .content-section .cards-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 0;
+  }
+  #services-page-container .content-section .cards-container .card-container {
+    border-bottom: 1px solid lightgray;
+    border-radius: 0px;
+  }
+  #services-page-container .content-section .cards-container .card-container:hover {
+    border-bottom: none;
+    border-radius: 7px;
+  }
+}
+@media (min-width: 580px) and (max-width: 760px) {
+  #services-page-container .header-banner .Mabunda-Group-image {
+    height: 60px;
+  }
+  #services-page-container .page-content-description {
+    margin: 0 50px;
+  }
+  #services-page-container .content-section .cards-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/* include all _partials from the following directories: */
+/* You can add global styles to this file, and also import other style files */
+#contact-us-page-container {
+  display: flex;
+  flex-direction: column;
+}
+#contact-us-page-container .header-banner {
+  box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 24px;
+  border: 5px solid white;
+  height: 242px;
+}
+#contact-us-page-container .page-content-description {
+  padding-top: 30px;
+  margin: 0 150px;
+  font-size: 15px;
+}
+#contact-us-page-container .page-content-description .content-title {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+#contact-us-page-container .page-content-description .content-description {
+  margin-bottom: 20px;
+}
+#contact-us-page-container .page-content-description .content-description-underline {
+  width: 100%;
+  margin: 0 auto;
+}
+#contact-us-page-container .content-section {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 25px;
+}
+#contact-us-page-container .content-section .contact-form-container {
+  flex-grow: 2;
+  text-align: left;
+  padding: 15px 15px;
+  background-color: rgba(245, 245, 245, 0.6);
+}
+#contact-us-page-container .content-section .contact-form-container .form-section-heading {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#contact-us-page-container .content-section .contact-form-container .form-control {
+  margin-bottom: 14px;
+}
+#contact-us-page-container .content-section .contact-form-container .form-control-textarea {
+  resize: none;
+}
+#contact-us-page-container .content-section .contact-form-container input::placeholder,
+#contact-us-page-container .content-section .contact-form-container textarea::placeholder {
+  color: grey;
+}
+#contact-us-page-container .content-section .contact-form-container .form-control-textbox,
+#contact-us-page-container .content-section .contact-form-container .form-control-textarea {
+  border-radius: 0px;
+  padding: 5px 6px;
+  color: grey;
+}
+#contact-us-page-container .content-section .contact-form-container .form-validation-error-message {
+  color: red;
+  margin: -5px 0 1em 0;
+}
+#contact-us-page-container .content-section .contact-form-container .btn {
+  border: 1px solid darkgray;
+  color: darkgray;
+  border-radius: 0px;
+  padding: 5px 30px 3px 30px;
+}
+#contact-us-page-container .content-section .contact-form-container .btn:nth-child(1) {
+  margin-right: 10px;
+}
+#contact-us-page-container .content-section .contact-form-container .btn:hover {
+  background-color: yellowgreen;
+  border-color: yellowgreen;
+  color: white;
+}
+#contact-us-page-container .content-section .contact-details-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  row-gap: 10px;
+}
+#contact-us-page-container .content-section .contact-details-container .contact-details {
+  background-color: rgba(245, 245, 245, 0.6);
+  padding: 15px;
+}
+#contact-us-page-container .content-section .contact-details-container .contact-details .contacts-heading {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#contact-us-page-container .content-section .contact-details-container .contact-details .contacts li {
+  list-style: none;
+  margin-left: -1em;
+}
+
+@media screen and (max-width: 600px) {
+  #contact-us-page-container .page-content-description {
+    margin: 0 20px;
+  }
+  #contact-us-page-container .content-section {
+    display: flex;
+    flex-direction: column;
+  }
+  #contact-us-page-container .content-section .contact-form-container {
+    padding: 10px 10px;
+  }
+  #contact-us-page-container .content-section .contact-details-container {
+    row-gap: 5px;
+  }
+  #contact-us-page-container .content-section .contact-details-container .contact-details {
+    padding: 10px;
+  }
+}
+/* include all _partials from the following directories: */
+/* You can add global styles to this file, and also import other style files */
+#notfound-page-container {
+  display: flex;
+  flex-direction: column;
+}
+#notfound-page-container .header-banner {
+  background-image: url("/banners/7.jpg");
+  background-size: cover;
+  box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 24px;
+  padding: 30px;
+  border: 5px solid white;
+  text-transform: uppercase;
+  color: #fff;
+}
+#notfound-page-container .header-banner .Mabunda-Group-image {
+  height: 80px;
+}
+#notfound-page-container .header-banner .title-name {
+  font-size: 22px;
+  padding: 8px 0;
+}
+#notfound-page-container .header-banner .banner-button {
+  color: #fff;
+  padding: 5px 30px;
+  margin: 5px 0;
+  border: 1px solid lightgrey;
+}
+#notfound-page-container .header-banner .banner-button:hover {
+  background-color: orange;
+  border-color: orange;
+}
+#notfound-page-container .page-content-description {
+  padding-top: 30px;
+  margin: 0 150px;
+  font-size: 15px;
+}
+#notfound-page-container .page-content-description .content-title {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+#notfound-page-container .page-content-description .content-description {
+  margin-bottom: 20px;
+}
+#notfound-page-container .page-content-description .content-description-underline {
+  width: 100%;
+  margin: 0 auto;
+}
+#notfound-page-container .content-section {
+  margin-top: 10px;
+}
+#notfound-page-container .content-section .about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 30px;
+}
+#notfound-page-container .content-section .about-container .description-section {
+  margin: auto;
+  max-width: 700px;
+  font-size: 19px;
+}
+#notfound-page-container .content-section .about-container .description-section .desc-heading {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: green;
+}
+#notfound-page-container .content-section .card-container {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 7px;
+  padding: 10px;
+  text-align: center;
+  min-width: 170px;
+  margin-bottom: 5px;
+}
+#notfound-page-container .content-section .card-container .card-image,
+#notfound-page-container .content-section .card-container .card-text,
+#notfound-page-container .content-section .card-container .card-btn {
+  margin: 8px 0;
+}
+#notfound-page-container .content-section .card-container .card-image {
+  height: 40px;
+}
+#notfound-page-container .content-section .card-container .card-text {
+  font-weight: bold;
+}
+#notfound-page-container .content-section .card-container .card-btn {
+  background-color: brown;
+  border: none;
+  padding: 3px 20px;
+  color: #fff;
+  min-width: 130px;
+}
+#notfound-page-container .content-section .card-container .card-btn:hover {
+  background-color: orange;
+}
+#notfound-page-container .content-section .card-container:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  #about-page-container .header-banner .Mabunda-Group-image {
+    height: 60px;
+  }
+  #about-page-container .page-content-description {
+    margin: 0 40px;
+  }
+  #about-page-container .content-section .cards-container {
+    flex-direction: column;
+  }
+  #about-page-container .content-section .cards-container .card-container .card-btn {
+    padding: 4px 50px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 700px) {
+  #about-page-container .header-banner .Mabunda-Group-image {
+    height: 60px;
+  }
+  #about-page-container .page-content-description {
+    margin: 0 80px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
