@@ -13,9 +13,8 @@ import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { SocialMediaButtonsComponent } from './components/social-media-buttons/social-media-buttons.component';
-import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
-import { ShareIconsModule } from 'ngx-sharebuttons/icons';
-
+import { SharethisAngularModule } from 'sharethis-angular';
+;
 
 @NgModule({
   declarations: [
@@ -31,11 +30,8 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
     AppRoutingModule,
     CommonModule,
     FontAwesomeModule,
+    SharethisAngularModule
 
-    ShareButtonsModule.withConfig({
-      debug: true,
-    }),
-    ShareIconsModule
   ],
   providers: [
     //Url requests - structure
