@@ -24,7 +24,7 @@ const routes: Routes = [
           ),
         data: {
           title: 'Welcome',
-          description: 'welcome to mabunda group, your ehs & engineering specialist.'        
+          description: 'welcome to mabunda group, your ehs & engineering specialist'        
         },
       },
       {
@@ -35,7 +35,7 @@ const routes: Routes = [
           ),
         data: {
           title: 'Welcome',
-          description: 'welcome to mabunda group, your ehs & engineering specialist.' 
+          description: 'welcome to mabunda group, your ehs & engineering specialist' 
         },
       },
 
@@ -47,7 +47,7 @@ const routes: Routes = [
           ),
         data: {
           title: 'About Us',
-          description: '[ we are committed to serve our customers ]',
+          description: 'we are committed to serve our customers',
         },
       },
 
@@ -59,7 +59,7 @@ const routes: Routes = [
           ),
         data: {
           title: 'Our Services',
-          description: '[ tailored to meet our customers needs ]',
+          description: 'tailored to meet our customers needs',
         },
       },
 
@@ -71,7 +71,7 @@ const routes: Routes = [
           ),
         data: {
           title: 'Gallery',
-          description: '[ we are committed to serve our customers ]',
+          description: 'we are committed to serve our customers.',
         },
       },
 
