@@ -24,6 +24,7 @@ const inlineShareButtonsConfig: InlineShareButtonsConfig = {
   radius: 0, // the corner radius on each button (INTEGER)
   show_total: false,
   size: 18, // the size of each button (INTEGER)
+
 };
 
 //Sticky Share Buttons

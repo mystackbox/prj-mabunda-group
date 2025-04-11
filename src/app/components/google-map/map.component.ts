@@ -24,35 +24,33 @@ export class MapComponent {
     mapTypeControl: false,
   };
 
-  icon = {
-    url: '../map-icon/pin.png', // url
-    scaledSize: new google.maps.Size(28, 30), // scaled size
+  markerIcon = {
+    url: '../google-map-icon/pin.png', // image url
+    scaledSize: new google.maps.Size(40, 40), // scaled size
     origin: new google.maps.Point(0, 0), // origin
-    anchor: new google.maps.Point(0, 30), // anchor
+    anchor: new google.maps.Point(3, 30), // anchor
   };
-
+  
 marker = {
-
+  
     label: {
-      color: 'orange',
+      text: '.',
+      color: 'brown',
       fontWeight: 'bold',
-      fontSize: '14px',
-      text: 'Mabunda Group',
+      // fontSize: '12px',
     },
 
     options: {
       draggable: false,
-      icon: this.icon,
-      content: 'Example',
-      gmpClickable: true,
+      icon: this.markerIcon,
+      content: 'M',
+      gmpClickable: false,
     },
 
     position: {
-      lat: -25.749, lng: 28.0947
+      lat: -25.749240973127016, lng: 28.094779265449265
     }
-  };
-
-  
+  }; 
 };
 
 

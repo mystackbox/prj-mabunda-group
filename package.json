@@ -29,6 +29,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@kolkov/ngx-gallery": "^2.0.1",
     "@nguniversal/express-engine": "^7.0.2",
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^5.3.5",

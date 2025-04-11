@@ -6,7 +6,7 @@
     flex-direction: column;
 
     .header-banner {
-        background-image: url('/banners/3.jpg');
+        background-image: url('/banners-img/3.jpg');
         @include header-banner-styles;
     }
 
@@ -16,7 +16,6 @@
 
     .content-section {
         padding: 15px 15px 0 15px;
-
         .cards-container {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
