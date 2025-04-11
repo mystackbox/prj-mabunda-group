@@ -1,0 +1,65 @@
+@use '../abstracts' as *;
+
+#gallery-page-container {
+
+    display: flex;
+    flex-direction: column;
+
+    .header-banner {
+        background-image: url('/banners-img/1.jpg');
+        @include header-banner-styles;
+    }
+
+    .page-content-description {
+        @include page-content-description-styles;
+    }
+
+    .content-section {
+        padding: 15px 15px 0 15px;
+
+        .ngx-gallery {
+            display: inline-block;
+            background-color: #f5f5f5;
+            padding: 20px 25px 30px 25px;
+            // margin-bottom: 10px;
+
+            .ngx-gallery-thumbnails .ngx-gallery-thumbnail  {
+                border: none;
+              }
+        }   
+    }
+}
+
+    @media screen and (max-width: 579px) {
+
+        #gallery-page-container {
+            .header-banner {
+                .Mabunda-Group-image {
+                    height: 60px;
+                }
+            }
+
+            .page-content-description {
+                margin: 0 10px;
+            }
+
+            .content-section {
+                padding-top: 10px;
+            }
+        }
+    }
+
+    @media (min-width: 580px) and (max-width: 760px) {
+        #gallery-page-container {
+
+            .header-banner {
+                .Mabunda-Group-image {
+                    height: 60px;
+                }
+            }
+
+            .page-content-description {
+                margin: 0 50px;
+            }
+        }
+    }

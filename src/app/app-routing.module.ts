@@ -71,7 +71,7 @@ const routes: Routes = [
           ),
         data: {
           title: 'Gallery',
-          description: 'we are committed to serve our customers.',
+          description: 'some of our successful projects',
         },
       },
 
