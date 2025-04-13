@@ -2,5 +2,13 @@
 @use '../abstracts' as *;
 
 .header-section {
-    @include page-header;  
+    @include page-header;
+}
+
+@media screen and (max-width: 579px) {
+
+    .page-title,
+    .page-description {
+        margin: 0px 0;
+    }
 }

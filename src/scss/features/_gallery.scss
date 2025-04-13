@@ -2,8 +2,7 @@
 
 #gallery-page-container {
 
-    display: flex;
-    flex-direction: column;
+    @include page-container-styles;
 
     .header-banner {
         background-image: url('/banners-img/1.jpg');
@@ -19,47 +18,51 @@
 
         .ngx-gallery {
             display: inline-block;
-            background-color: #f5f5f5;
-            padding: 20px 25px 30px 25px;
-            // margin-bottom: 10px;
 
             .ngx-gallery-thumbnails .ngx-gallery-thumbnail  {
-                border: none;
-              }
+                border: 5px solid lightgray;
+            }
         }   
     }
 }
 
-    @media screen and (max-width: 579px) {
+@media screen and (max-width: 579px) {
 
-        #gallery-page-container {
-            .header-banner {
-                .Mabunda-Group-image {
-                    height: 60px;
-                }
+    #gallery-page-container {
+        .header-banner {
+            .Mabunda-Group-image {
+                height: 45px;
             }
+            .title-name {
+                font-size: 20px;
+            }
+            .banner-button {
+                font-size: 10px;
+                padding: 3px 15px;
+                            }
+        }
 
-            .page-content-description {
-                margin: 0 10px;
-            }
+        .page-content-description {
+            margin: 0 10px;
+        }
 
-            .content-section {
-                padding-top: 10px;
-            }
+        .content-section {
+            padding-top: 10px;
         }
     }
+}
 
-    @media (min-width: 580px) and (max-width: 760px) {
-        #gallery-page-container {
+@media (min-width: 580px) and (max-width: 760px) {
+    #gallery-page-container {
 
-            .header-banner {
-                .Mabunda-Group-image {
-                    height: 60px;
-                }
-            }
-
-            .page-content-description {
-                margin: 0 50px;
+        .header-banner {
+            .Mabunda-Group-image {
+                height: 60px;
             }
         }
+
+        .page-content-description {
+            margin: 0 50px;
+        }
     }
+}

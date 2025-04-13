@@ -10,7 +10,6 @@ import { OurServicesModule } from './features/our-services/our-services.module';
 import { ContactUsModule } from './features/contact-us/contact-us.module';
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: '',
     component: MasterPageComponent,
@@ -27,6 +26,7 @@ const routes: Routes = [
           description: 'welcome to mabunda group, your ehs & engineering specialist'        
         },
       },
+
       {
         path: 'home',
         loadChildren: () =>
@@ -35,7 +35,7 @@ const routes: Routes = [
           ),
         data: {
           title: 'Welcome',
-          description: 'welcome to mabunda group, your ehs & engineering specialist' 
+          description: 'your ehs & engineering specialist' 
         },
       },
 
@@ -47,7 +47,7 @@ const routes: Routes = [
           ),
         data: {
           title: 'About Us',
-          description: 'we are committed to serve our customers',
+          description: 'determined to serve our customers',
         },
       },
 
@@ -59,7 +59,7 @@ const routes: Routes = [
           ),
         data: {
           title: 'Our Services',
-          description: 'tailored to meet our customers needs',
+          description: 'Addressing our customers needs',
         },
       },
 
@@ -83,7 +83,7 @@ const routes: Routes = [
           ),
         data: {
           title: 'Contact Us',
-          description: '[ get in touch with us for further assistance ]',
+          description: 'get in touch with us today!',
         },
       },
 
@@ -98,6 +98,7 @@ const routes: Routes = [
           description: 'sorry, the page you are looking for was not found.'
         },
       },
+      
       {
         path: '**',
         redirectTo: '/page-not-found',

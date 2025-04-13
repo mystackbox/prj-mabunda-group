@@ -2,8 +2,7 @@
 
 #services-page-container {
 
-    display: flex;
-    flex-direction: column;
+    @include page-container-styles;
 
     .header-banner {
         background-image: url('/banners-img/3.jpg');
@@ -15,18 +14,18 @@
     }
 
     .content-section {
-        padding: 15px 15px 0 15px;
+        padding: 10px 15px 0px 15px;
 
         .cards-container {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: auto;
-            margin: 10px 40px 5px 40px;
+            margin: 5px 30px 0px 30px;
 
             .card-container {
                 padding: 10px;
                 border-radius: 7px;
-                margin: 0 15px;
+                margin: 0 5px;
 
                 .card-image,
                 .card-text,
@@ -40,6 +39,7 @@
 
                 .card-text {
                     text-transform: uppercase;
+                    font-size: 12px;
                     font-weight: bold;
                     color: olivedrab;
                 }
@@ -61,11 +61,17 @@
 @media screen and (max-width: 579px) {
 
     #services-page-container {
-
         .header-banner {
             .Mabunda-Group-image {
-                height: 60px;
+                height: 45px;
             }
+            .title-name {
+                font-size: 20px;
+            }
+            .banner-button {
+                font-size: 10px;
+                padding: 3px 15px;
+                            }
         }
 
         .page-content-description {
@@ -77,12 +83,13 @@
 
             .cards-container {
                 grid-template-columns: 1fr 1fr;
-
                 margin: 0;
+                padding: 0;
 
                 .card-container {
                     border-bottom: 1px solid lightgray;
                     border-radius: 0px;
+                    margin: 6px;
 
                     &:hover {
                         border-bottom: none;
@@ -95,6 +102,7 @@
 }
 
 @media (min-width: 580px) and (max-width: 760px) {
+
     #services-page-container {
 
         .header-banner {

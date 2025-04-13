@@ -105,6 +105,10 @@
 @media screen and (max-width: 600px) {
     #contact-us-page-container {
 
+        .header-banner {
+            height: 202px;
+        }
+
         .page-content-description {
             margin: 0 20px;
         }
@@ -115,6 +119,9 @@
 
             .contact-form-container {
                 padding: 10px 10px;
+                .btn {
+                    font-size: 10px;
+                }
             }
 
             .contact-details-container {

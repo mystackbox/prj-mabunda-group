@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+import { Title, Meta, MetaDefinition } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +15,9 @@ export class MetaTagService {
 
   updateDescription(desc: string) {
     this.meta.updateTag({ name: 'description', content: desc })
+  }
+
+  updateMetaTags(metaTags: MetaDefinition[]){
+    metaTags.forEach(m=> this.meta.updateTag(m));
   }
 }
