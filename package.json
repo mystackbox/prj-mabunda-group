@@ -8,9 +8,12 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "watch-css": "sass ./src/scss/styles.scss ./src/styles.css --watch",
-    "serve:ssr:prj-mabunda-group": "node dist/prj-mabunda-group/server/server.mjs",
-    "build:ssr:prj-mabunda-group": "ng build && ng run prj-mabunda-group:server",
-    "lint": "ng lint"
+    "dev:ssr": "ng run prj-mabunda-group:serve-ssr",
+    "serve:ssr": "node dist/prj-mabunda-group/server/main.js",
+    "build:ssr": "ng build && ng run prj-mabunda-group:server:production",
+    "prerender": "ng run prj-mabunda-group:prerender",
+    "lint": "ng lint",
+    "serve:ssr:prj-mabunda-group": "node dist/prj-mabunda-group/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +40,7 @@
     "express": "^4.18.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.7.1",
+    "ngx-sharebuttons": "^17.0.0",
     "rxjs": "~7.8.0",
     "sharethis-angular": "^2.1.3",
     "tslib": "^2.3.0",

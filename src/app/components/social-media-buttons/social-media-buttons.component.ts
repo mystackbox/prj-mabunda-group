@@ -25,6 +25,16 @@ const inlineShareButtonsConfig: InlineShareButtonsConfig = {
   show_total: false,
   size: 18, // the size of each button (INTEGER)
 
+  // OPTIONAL PARAMETERS
+
+  url: 'https://mabundagroup.com/', // (defaults to current url)
+  image: 'https://mabundagroup.com/seo-img/share-img.png',  // (defaults to og:image or twitter:image)
+  description: 'Mabunda Group Pty - EHS consulting company, geared to assist the clients to comply with OHS.',       // (defaults to og:description or twitter:description)
+  title: 'Mabunda Group', // (defaults to og:title or twitter:title)
+  message: 'Good day, I would like to hear more about your services. Can we please have a discussion? Thanks.',     // (only for email sharing)
+  subject: 'EHS and Engineering services enquiries',  // (only for email sharing)
+  username: 'custom twitter handle' // (only for twitter sharing)
+
 };
 
 //Sticky Share Buttons
@@ -59,11 +69,11 @@ const stickyShareButtonsConfig: StickyShareButtonsConfig = {
   // OPTIONAL PARAMETERS
 
   url: 'https://mabundagroup.com/', // (defaults to current url)
-  image: '../assets/banners/6.jpg',  // (defaults to og:image or twitter:image)
-  description: 'Hi, I would like to hear more about your services. Can we please have a discussion? Thanks.',       // (defaults to og:description or twitter:description)
-  title: 'Mabunda Group',            // (defaults to og:title or twitter:title)
+  image: 'https://mabundagroup.com/seo-img/share-img.png',  // (defaults to og:image or twitter:image)
+  description: 'Mabunda Group Pty - EHS consulting company, geared to assist the clients to comply with OHS.',       // (defaults to og:description or twitter:description)
+  title: 'Mabunda Group', // (defaults to og:title or twitter:title)
   message: 'Good day, I would like to hear more about your services. Can we please have a discussion? Thanks.',     // (only for email sharing)
-  subject: 'Let me know more about your services',  // (only for email sharing)
+  subject: 'EHS and Engineering services enquiries',  // (only for email sharing)
   username: 'custom twitter handle' // (only for twitter sharing)
 };
 
