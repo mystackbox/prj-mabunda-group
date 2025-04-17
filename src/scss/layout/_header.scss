@@ -6,10 +6,4 @@
     @include page-header;
 }
 
-@media screen and (max-width: 579px) {
-
-    .page-title,
-    .page-description {
-        margin: 0px 0;
-    }
-}
+@include standard-media-queries;

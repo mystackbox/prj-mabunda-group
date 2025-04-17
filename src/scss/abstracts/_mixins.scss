@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "sass:map";
 
 @mixin page-container-styles {
   display: flex;
@@ -16,33 +17,32 @@
   .page-title {
     font-size: 20px;
     font-weight: bold;
+    color: green;
   }
-
-
 }
 
 @mixin header-banner-styles {
   background-size: cover;
   box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 24px;
   padding: 30px;
-  border: 5px solid white;
+  border: 6px solid white;
   text-transform: uppercase;
   color: #fff;
-
   .Mabunda-Group-image {
     height: 80px;
   }
 
   .title-name {
-    font-size: $global-font-size + 8px;
+    font-size: $global-font-size + 4px;
     padding: 8px 0;
   }
 
   .banner-button {
     color: #fff;
-    padding: 5px 30px;
+    padding: 3px 20px;
     margin: 5px 0;
     border: 1px solid lightgrey;
+    font-size: $global-font-size -6px;
 
     &:hover {
       background-color: orange;
@@ -79,4 +79,86 @@
 @mixin icon-styles {
   color: $icon-color;
   margin-right: 5px;
+}
+
+//reusable media queries
+@mixin screen-size-xs {
+  @media (max-width: map.get($media-query-breakpoints, 'xs')) {
+    @content
+  }
+}
+
+@mixin screen-size-sm {
+  @media (max-width: map.get($media-query-breakpoints, 'sm')) {
+    @content
+  }
+}
+
+@mixin screen-size-md {
+  @media (max-width: map.get($media-query-breakpoints, 'md')) {
+    @content
+  }
+}
+
+@mixin screen-size-lg {
+  @media (max-width: map.get($media-query-breakpoints, 'lg')) {
+    @content
+  }
+}
+
+@mixin screen-size-xl {
+  @media (max-width: map.get($media-query-breakpoints, 'xl')) {
+    @content
+  }
+}
+
+@mixin standard-media-queries {
+  @include screen-size-xs {
+
+    .header-section {
+
+      .page-title,
+      .page-description {
+        margin: 7px 0;
+      }
+    }
+
+    #home-page-container,
+    #about-page-container,
+    #services-page-container,
+    #gallery-page-container,
+    #notfound-page-container {
+      
+      .header-banner {
+        padding: 20px;
+
+        .Mabunda-Group-image {
+          height: 45px;
+        }
+
+        .title-name {
+          font-size: 16px;
+          font-weight: 100;
+        }
+
+        .banner-button {
+          font-size: 10px;
+          padding: 3px 15px;
+        }
+      }
+
+      .page-content-description {
+        margin: 0 20px;
+      }
+    }
+
+  }
+
+  // @include screen-size-sm {}
+
+  // @include screen-size-md {}
+
+  // @include screen-size-lg {}
+
+  // @include screen-size-xl {}
 }

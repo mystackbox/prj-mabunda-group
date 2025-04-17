@@ -69,28 +69,10 @@
     }
 }
 
+@include standard-media-queries;
+
 @media screen and (max-width: 680px) {
-
     #home-page-container {
-        .header-banner {
-            .Mabunda-Group-image {
-                height: 45px;
-            }
-
-            .title-name {
-                font-size: 20px;
-            }
-
-            .banner-button {
-                font-size: 10px;
-                padding: 3px 15px;
-            }
-        }
-
-        .page-content-description {
-            margin: 0 20px;
-        }
-
         .content-section {
             margin: 0px 12px;
             padding: 5px 0 0 0;

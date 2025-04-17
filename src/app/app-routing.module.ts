@@ -24,7 +24,7 @@ const routes: Routes = [
           seo: {
             title: 'Welcome',
             metaTags: [
-              { name: 'short-desc', content: 'Your EHS and Engineering Specialists' },
+              { name: 'short-desc', content: 'EHS & Engineering Specialists' },
               { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
               { name: 'robots', content: 'index, follow'},
               { property: 'article:author', content: 'Yingisani'},
@@ -66,7 +66,7 @@ const routes: Routes = [
             seo: {
               title: 'Welcome',
               metaTags: [
-                { name: 'short-desc', content: 'Your EHS and Engineering Specialists' },
+                { name: 'short-desc', content: 'EHS & Engineering Specialists' },
                 { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
                 { name: 'robots', content: 'index, follow'},
                 { property: 'article:author', content: 'Yingisani'},

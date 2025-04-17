@@ -81,28 +81,11 @@
     }
 }
 
+@include standard-media-queries;
+
 @media screen and (max-width: 480px) {
 
     #about-page-container {
-
-        .header-banner {
-            .Mabunda-Group-image {
-                height: 45px;
-            }
-
-            .title-name {
-                font-size: 20px;
-            }
-
-            .banner-button {
-                font-size: 10px;
-                padding: 3px 15px;
-            }
-        }
-
-        .page-content-description {
-            margin: 0 10px;
-        }
 
         .content-section {
             .cards-container {
@@ -115,22 +98,5 @@
                 }
             }
         }
-    }
-}
-
-@media screen and (min-width: 481px) and (max-width: 700px) {
-
-    #about-page-container {
-
-        .header-banner {
-            .Mabunda-Group-image {
-                height: 60px;
-            }
-        }
-
-        .page-content-description {
-            margin: 0 80px;
-        }
-
     }
 }
