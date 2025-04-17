@@ -85,36 +85,36 @@
 
     #about-page-container {
 
-    .header-banner {
-        .Mabunda-Group-image {
-            height: 45px;
+        .header-banner {
+            .Mabunda-Group-image {
+                height: 45px;
+            }
+
+            .title-name {
+                font-size: 20px;
+            }
+
+            .banner-button {
+                font-size: 10px;
+                padding: 3px 15px;
+            }
         }
 
-        .title-name {
-            font-size: 20px;
+        .page-content-description {
+            margin: 0 10px;
         }
 
-        .banner-button {
-            font-size: 10px;
-            padding: 3px 15px;
-        }
-    }
+        .content-section {
+            .cards-container {
+                flex-direction: column;
 
-    .page-content-description {
-        margin: 0 10px;
-    }
-
-    .content-section {
-        .cards-container {
-            flex-direction: column;
-
-            .card-container {
-                .card-btn {
-                    padding: 4px 50px;
+                .card-container {
+                    .card-btn {
+                        padding: 4px 50px;
+                    }
                 }
             }
         }
-    }
     }
 }
 

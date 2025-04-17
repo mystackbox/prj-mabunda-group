@@ -1,5 +1,7 @@
 /*  Site footer */
 @use '../abstracts' as *;
+
+//floating WhatsApp button
 .float {
     position: fixed;
     width: 40px;
@@ -13,9 +15,8 @@
     font-size: 20px;
     box-shadow: 2px 2px 11px #999;
     z-index: 100;
-}
 
-.my-float {
-    margin-top: 10px;
+    .my-float {
+        margin-top: 10px;
+    }
 }
-

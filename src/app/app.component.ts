@@ -10,11 +10,8 @@ import { MetaTagService } from './shared/services/mata-tags/meta-tags';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'prj-mabunda-group';
 
+  //Injecting services
   constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private metaTagService: MetaTagService
   ) {}
 }

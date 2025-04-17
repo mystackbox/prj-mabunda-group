@@ -14,7 +14,7 @@
         @include page-content-description-styles;
     }
 
-    .content-section  {
+    .content-section {
         display: flex;
         flex-direction: row;
         gap: 10px;
@@ -62,7 +62,8 @@
                 border: 1px solid darkgray;
                 color: darkgray;
                 border-radius: 0px;
-                padding: 5px 30px 3px 30px;
+                padding: 4px 15px 3px 15px;
+                font-size: 12px;
 
                 &:nth-child(1) {
                     margin-right: 10px;
@@ -113,12 +114,13 @@
             margin: 0 20px;
         }
 
-        .content-section  {
+        .content-section {
             display: flex;
             flex-direction: column;
 
             .contact-form-container {
                 padding: 10px 10px;
+
                 .btn {
                     font-size: 10px;
                 }
@@ -126,6 +128,7 @@
 
             .contact-details-container {
                 row-gap: 5px;
+
                 .contact-details {
                     padding: 10px;
                 }

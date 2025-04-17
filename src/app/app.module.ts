@@ -10,15 +10,13 @@ import { CommonModule, LocationStrategy, PathLocationStrategy } from '@angular/c
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
-import { SocialMediaButtonsComponent } from './components/social-media-buttons/social-media-buttons.component';
+
+//share buttons
 import { ShareButtonsComponent } from './components/share-buttons/share-buttons.component';
 
 //font-awesome
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-
-//socia media share buttons package - [ sharethis-angular ]
-import { SharethisAngularModule } from 'sharethis-angular';
 
 //socia media share buttons package - [ ngx-sharebuttons]
 import { ShareButtons } from 'ngx-sharebuttons/buttons';
@@ -32,7 +30,6 @@ import { shareIcons } from 'ngx-sharebuttons/icons';
     HeaderComponent,
     FooterComponent,
     NavBarComponent,
-    SocialMediaButtonsComponent,
     ShareButtonsComponent,
   ],
   imports: [
@@ -41,7 +38,6 @@ import { shareIcons } from 'ngx-sharebuttons/icons';
     ShareButtons,
     CommonModule,
     FontAwesomeModule,
-    SharethisAngularModule,
   ],
   providers: [
     //Url requests - structure

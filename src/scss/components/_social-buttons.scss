@@ -1,0 +1,25 @@
+.spinner-container {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 20%;
+    cursor: pointer;
+}
+
+:root {
+    --sb-icon-size: 0.2em; //1.2
+    --sb-font-weight: 100; //bold
+    --sb-text-padding: 0 0.7em;
+    --sb-margin: 0 0.5em;
+    --sb-padding: 1.7em 0;
+    --sb-min-width: 3.5em;
+    --sb-height: 1.7em; //2.5
+    --sb-color: initial;
+    --sb-background: initial;
+    --sb-font-size: 6px;
+    --sb-border: initial;
+    --sb-border-radius: initial;
+    --sb-line-height: 2.571em;
+    --sb-text-shadow: initial;
+    --sb-overflow: initial;
+}

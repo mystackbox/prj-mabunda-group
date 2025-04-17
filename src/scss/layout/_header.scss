@@ -1,6 +1,7 @@
 /*  Site header */
 @use '../abstracts' as *;
 
+//page header styles
 .header-section {
     @include page-header;
 }
@@ -11,22 +12,4 @@
     .page-description {
         margin: 0px 0;
     }
-}
-
-:root {
-    --sb-icon-size: 0.2em; //1.2
-    --sb-font-weight: 100 ; //bold
-    --sb-text-padding: 0 0.7em;
-    --sb-margin: 0 0.5em;
-    --sb-padding: 1.5em 0;
-    --sb-min-width: 3.5em;
-    --sb-height: 1.7em; //2.5
-    --sb-color: initial;
-    --sb-background: initial;
-    --sb-font-size: 6px;
-    --sb-border: initial;
-    --sb-border-radius: initial;
-    --sb-line-height: 2.571em;
-    --sb-text-shadow: initial;
-    --sb-overflow: initial;
 }

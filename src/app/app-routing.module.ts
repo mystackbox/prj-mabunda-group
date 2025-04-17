@@ -38,7 +38,7 @@ const routes: Routes = [
               { property: 'og:image:secure_url', content: environment.appUrl + '/seo-img/share-img.png' },
               { property: 'og:image:type', content: 'image/png' },
               { property: 'og:image:width', content: '1200' },
-              { property: 'og:image:height', content: '630' },
+              { property: 'og:image:height', content: '627' },
               { property: 'og:image:alt', content: 'Your EHS & Engineering Specialists' },
               { property: 'og:url', content: environment.appUrl},
 
@@ -80,7 +80,7 @@ const routes: Routes = [
                 { property: 'og:image:secure_url', content: environment.appUrl + '/seo-img/share-img.png' },
                 { property: 'og:image:tyep', content: 'image/png' },
                 { property: 'og:image:width', content: '1200' },
-                { property: 'og:image:height', content: '630' },
+                { property: 'og:image:height', content: '627' },
                 { property: 'og:image:alt', content: 'Your EHS & Engineering Specialists' },
                 { property: 'og:url', content: environment.appUrl + '/home'},
   
@@ -121,7 +121,7 @@ const routes: Routes = [
               { property: 'og:image:secure_url', content: environment.appUrl + '/seo-img/share-img.png' },
               { property: 'og:image:tyep', content: 'image/png' },
               { property: 'og:image:width', content: '1200' },
-              { property: 'og:image:height', content: '630' },
+              { property: 'og:image:height', content: '627' },
               { property: 'og:image:alt', content: 'Your EHS & Engineering Specialists' },
               { property: 'og:url', content: environment.appUrl + '/about-us'},
 
@@ -164,7 +164,7 @@ const routes: Routes = [
                 { property: 'og:image:secure_url', content: environment.appUrl + '/seo-img/share-img.png' },
                 { property: 'og:image:tyep', content: 'image/png' },
                 { property: 'og:image:width', content: '1200' },
-                { property: 'og:image:height', content: '630' },
+                { property: 'og:image:height', content: '627' },
                 { property: 'og:image:alt', content: 'Your EHS & Engineering Specialists' },
                 { property: 'og:url', content: environment.appUrl + '/our-services'},
   
@@ -206,7 +206,7 @@ const routes: Routes = [
                 { property: 'og:image:secure_url', content: environment.appUrl + '/seo-img/share-img.png' },
                 { property: 'og:image:tyep', content: 'image/png' },
                 { property: 'og:image:width', content: '1200' },
-                { property: 'og:image:height', content: '630' },
+                { property: 'og:image:height', content: '627' },
                 { property: 'og:image:alt', content: 'Your EHS & Engineering Specialists' },
                 { property: 'og:url', content: environment.appUrl + '/gallery'},
   
@@ -247,7 +247,7 @@ const routes: Routes = [
                 { property: 'og:image:secure_url', content: environment.appUrl + '/seo-img/share-img.png' },
                 { property: 'og:image:tyep', content: 'image/png' },
                 { property: 'og:image:width', content: '1200' },
-                { property: 'og:image:height', content: '630' },
+                { property: 'og:image:height', content: '627' },
                 { property: 'og:image:alt', content: 'Your EHS & Engineering Specialists' },
                 { property: 'og:url', content: environment.appUrl + '/contact-us'},
   
@@ -288,7 +288,7 @@ const routes: Routes = [
                 { property: 'og:image:secure_url', content: environment.appUrl + '/seo-img/share-img.png' },
                 { property: 'og:image:tyep', content: 'image/png' },
                 { property: 'og:image:width', content: '1200' },
-                { property: 'og:image:height', content: '630' },
+                { property: 'og:image:height', content: '627' },
                 { property: 'og:image:alt', content: 'Your EHS & Engineering Specialists' },
                 { property: 'og:url', content: environment.appUrl + '/page-not-found'},
   

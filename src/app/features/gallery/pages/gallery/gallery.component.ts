@@ -18,9 +18,11 @@ export class GalleryComponent {
   galleryOptions: NgxGalleryOptions[] = [];
   galleryImages: NgxGalleryImage[] = [];
 
+  //Injecting services
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+    //load ngx-gallery based on this configurations
     this.galleryOptions = [
       {
         image: false,
@@ -115,6 +117,7 @@ export class GalleryComponent {
     ];
   }
 
+  //reditect to contact us page
   redirectToContactUs() {
     this.router.navigate(['/contact-us']);
   }

@@ -15,6 +15,7 @@ export class HeaderComponent {
   headerTitle: any;
   headerDescription: any;
 
+  //Injecting services
   constructor(
 
     private titleService: Title,
@@ -24,6 +25,8 @@ export class HeaderComponent {
     private activatedRoute: ActivatedRoute,
     
   ) {
+
+    //detect routing requests changes or update
     this.router.events
     .pipe(
       filter((e) => e instanceof NavigationEnd),
@@ -37,8 +40,10 @@ export class HeaderComponent {
     )
     .subscribe((data: any) => {
 
+      //retrieve meta data for the activated url
       let seoData = data['seo'];
       
+      //assign meta data for the activated url to page header meta tags
       this.metaTagService.updateTitle(seoData['title']);
       this.metaTagService.updateMetaTags(seoData['metaTags']);
 
@@ -46,7 +51,4 @@ export class HeaderComponent {
       this.headerDescription = this._meta.getTag('name=short-desc')?.content; //header description
  
     });}
-
-  ngOnInit(): void {
-  }
 }
