@@ -59,19 +59,22 @@
             }
 
             .btn {
-                border: 1px solid darkgray;
-                color: darkgray;
+                background-color: yellowgreen;
+                border: none; 
+                color: white;
                 border-radius: 0px;
                 padding: 4px 15px 3px 15px;
                 font-size: 12px;
 
                 &:nth-child(1) {
                     margin-right: 10px;
+                    background-color: yellowgreen;
+                    border-color: yellowgreen;    
                 }
 
                 &:hover {
-                    background-color: yellowgreen;
-                    border-color: yellowgreen;
+                    background-color: red;
+                    border-color: red;
                     color: white;
                 }
             }

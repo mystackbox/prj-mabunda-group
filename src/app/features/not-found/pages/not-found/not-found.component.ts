@@ -15,4 +15,5 @@ export class NotFoundComponent {
   redirectToContactUs() {
     this.router.navigate(['/contact-us']);
   }
+  
 }

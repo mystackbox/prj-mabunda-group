@@ -34,6 +34,18 @@
                     font-weight: bold;
                     color: green;
                 }
+                .submit-button {
+                    background-color: orange;
+                    border: none;
+                    padding: 5px 30px;
+                    color: #fff;
+                    min-width: 130px;
+    
+                    &:hover {
+                        background-color: green;
+                    }
+                }
+    
 
             }
         }
@@ -61,18 +73,7 @@
                 font-weight: bold;
             }
 
-            .card-btn {
-                background-color: brown;
-                border: none;
-                padding: 3px 20px;
-                color: #fff;
-                min-width: 130px;
-
-                &:hover {
-                    background-color: orange;
-                }
-            }
-
+            
             &:hover {
                 box-shadow: none;
                 cursor: pointer;

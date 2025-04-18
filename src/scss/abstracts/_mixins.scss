@@ -15,7 +15,7 @@
   }
 
   .page-title {
-    font-size: 20px;
+    font-size: $global-font-size + 6px;
     font-weight: bold;
     color: green;
   }
@@ -53,7 +53,7 @@
 
 @mixin page-content-description-styles {
   padding-top: 30px;
-  margin: 0 150px;
+  margin: 0 140px;
 
   .content-title {
     margin-bottom: 15px;
@@ -138,7 +138,7 @@
 
         .title-name {
           font-size: 16px;
-          font-weight: 100;
+          font-weight: 500;
         }
 
         .banner-button {
@@ -154,11 +154,11 @@
 
   }
 
-  // @include screen-size-sm {}
+  @include screen-size-sm {}
 
-  // @include screen-size-md {}
+  @include screen-size-md {}
 
-  // @include screen-size-lg {}
+  @include screen-size-lg {}
 
-  // @include screen-size-xl {}
+  @include screen-size-xl {}
 }
