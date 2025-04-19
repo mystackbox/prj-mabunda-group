@@ -27,6 +27,7 @@ export class ContactUsComponent {
         Validators.required,
         Validators.email,
       ]),
+      subject: new FormControl('', [Validators.required]),
       message: new FormControl('', [Validators.required]),
     });
   }
@@ -39,6 +40,11 @@ export class ContactUsComponent {
   //getter for form-control[emailAddress]
   get emailAddress() {
     return this._contactForm.get('emailAddress');
+  }
+
+   //getter for form-control[fullName]
+   get subject() {
+    return this._contactForm.get('subject');
   }
 
   //getter for form-control [message]

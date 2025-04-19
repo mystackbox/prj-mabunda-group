@@ -114,6 +114,16 @@ export class GalleryComponent {
         medium: 'gallery-img/12.jpeg',
         big: 'gallery-img/12.jpeg',
       },
+      {
+        small: 'gallery-img/13.jpeg',
+        medium: 'gallery-img/13.jpeg',
+        big: 'gallery-img/13.jpeg',
+      },
+      {
+        small: 'gallery-img/14.jpeg',
+        medium: 'gallery-img/14.jpeg',
+        big: 'gallery-img/14.jpeg',
+      },
     ];
   }
 
