@@ -1,6 +1,9 @@
 /*  Site header */
 @use '../abstracts' as *;
 
+//page header styles
 .header-section {
-    @include page-header;  
+    @include page-header;
 }
+
+@include standard-media-queries;

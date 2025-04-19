@@ -1,32 +1,43 @@
 <div id="notfound-page-container" class="about-page-container">
-    <section class="header-banner">
-      <img
-        src="banner-icons/2.png"
-        alt="Mabunda Group"
-        class="Mabunda-Group-image responsive"
-      />
-      <div class="title-name">mabunda group</div>
-      <div (click)="redirectToContactUs()" class="btn btn-sm banner-button">
-        <fa-icon class="card-icon" [icon]="['fas', 'phone']"></fa-icon>
-        get in touch
-      </div>
-    </section>
-  
-    <section class="content-section">
-      <div class="about-container">
-        <section class="description-section">
-          <p class="desc-heading">Sorry!</p>
-          <hr />
-            <div class="desc-paragraph">
-            <p>
-            The resource that you are looking for seems to be unavailable at the moment. 
-            This could be due to the unavailable server, poor network, or the resource has completely been removed.
-            </p>
-            <p> This could be resoleved by try one of the follow methods: (a) Make sure that you are connected to the netdwork,
-            (b) Contact the system administrtor for further assistance.
-            </div>
-        </section>
+  <section class="header-banner">
+    <img
+      src="banner-icons/2.png"
+      alt="Mabunda Group"
+      class="Mabunda-Group-image responsive"
+    />
+    <div class="title-name">mabunda group</div>
+    <div (click)="redirectToContactUs()" class="btn btn-sm banner-button">
+      <fa-icon class="card-icon" [icon]="['fas', 'phone']"></fa-icon>
+      get in touch
+    </div>
+  </section>
 
-      </div>
-    </section>
-  </div>
+  <section class="content-section">
+    <div class="about-container">
+      <section class="description-section">
+        <p class="desc-heading">Sorry!</p>
+        <hr />
+        <div class="desc-paragraph">
+          <p>
+            The resource that you are looking for seems to be unavailable at the
+            moment. This could be due to the unavailable server, poor network,
+            or the resource has completely been removed.
+          </p>
+          <p>
+            This could be resoleved by try one of the follow methods: (a) Make
+            sure that you are connected to the netdwork, (b) Contact the system
+            administrtor for further assistance.
+          </p>
+         
+        </div>
+        <input
+        type="submit"
+        id="submit"
+        value="Contact Systems Admin"
+        (click)="redirectToContactUs()"
+        class="btn btn-sm submit-button"
+      />
+      </section>
+    </div>
+  </section>
+</div>

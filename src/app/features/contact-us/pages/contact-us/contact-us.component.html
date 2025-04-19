@@ -1,108 +1,189 @@
 <div id="contact-us-page-container" class="contact-us-page-container">
- <section class="header-banner">
+  <section class="header-banner">
     <app-map></app-map>
-</section>
+  </section>
 
-  <section class="content-section ">
-    
-      <div class="contact-form-container">
+  <!--content-section-->
+  <section class="content-section">
+    <div class="contact-form-container">
+      <div class="content-form">
+        <p class="form-section-heading">CONTACT FORM</p>
 
-        <div class="content-form">
-          <p class="form-section-heading">CONTACT FORM</p>
-          <form [formGroup]="_contactForm" class="contact-form" id="contact-form">
-            <div class="form-group">
-              <input type="text" formControlName="fullName" class="form-control form-control-sm form-control-textbox"
-                placeholder="* Full names" />
-      
-              <!--
+        <!--form-->
+        <form [formGroup]="_contactForm" class="contact-form" id="contact-form">
+          
+          <!--form elements-->
+          <div class="form-group">
+            <input
+              type="text"
+              formControlName="fullName"
+              id="fullName"
+              class="form-control form-control-sm form-control-textbox"
+              placeholder="* Full names"
+            />
+
+            <!--
                     Custom validation
                     Multiple Validation Error messages  
                 -->
-              <div *ngIf="fullName?.touched && fullName?.invalid" class="form-validation-error-message">
-                <div *ngIf="fullName?.errors?.['required']">* Name required</div>
-                <div *ngIf="fullName?.errors?.['whiteSpace']">
-                  * Name cannot contain whitespace
-                </div>
-      
-                <div *ngIf="fullName?.errors?.['numeric']">
-                  * Name cannot contain numeric values
-                </div>
-      
-                <div *ngIf="fullName?.errors?.['specialCharacter']">
-                  * Name cannot contain special chatacters
-                </div>
+            <div
+              *ngIf="fullName?.touched && fullName?.invalid"
+              class="form-validation-error-message"
+            >
+              <div *ngIf="fullName?.errors?.['required']">* Name required</div>
+              <div *ngIf="fullName?.errors?.['whiteSpace']">
+                * Name cannot contain whitespace
+              </div>
+
+              <div *ngIf="fullName?.errors?.['numeric']">
+                * Name cannot contain numeric values
+              </div>
+
+              <div *ngIf="fullName?.errors?.['specialCharacter']">
+                * Name cannot contain special chatacters
               </div>
             </div>
-      
-            <div class="form-group">
-              <input type="email" formControlName="emailAddress" class="form-control form-control-sm form-control-textbox"
-                placeholder="* Email address" />
-      
-              <!--Multiple Validation Error messages -->
-              <div *ngIf="emailAddress?.touched && emailAddress?.invalid" class="form-validation-error-message">
-                <div *ngIf="emailAddress?.errors?.['required']">
-                  * Email address required
-                </div>
-                <!-- <div *ngIf="name.errors?.['maxlength']"> First name should have a minimum of 5 characters </div> -->
-                <div *ngIf="emailAddress?.errors?.['email']">
-                  * Email address format is incorrect
-                </div>
-      
-                <div *ngIf="emailAddress?.errors?.['emailExist']">
-                  * Email address alreay exist
-                </div>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              formControlName="emailAddress"
+              id="emailAddress"
+              class="form-control form-control-sm form-control-textbox"
+              placeholder="* Email address"
+            />
+
+            <!--Multiple Validation Error messages -->
+            <div
+              *ngIf="emailAddress?.touched && emailAddress?.invalid"
+              class="form-validation-error-message"
+            >
+              <div *ngIf="emailAddress?.errors?.['required']">
+                * Email address required
+              </div>
+              <!-- <div *ngIf="name.errors?.['maxlength']"> First name should have a minimum of 5 characters </div> -->
+              <div *ngIf="emailAddress?.errors?.['email']">
+                * Email address format is incorrect
+              </div>
+
+              <div *ngIf="emailAddress?.errors?.['emailExist']">
+                * Email address alreay exist
               </div>
             </div>
-      
-            <div class="form-group">
-              <textarea type="text" formControlName="message" id="message" rows="5"  maxlength="300" class="form-control form-control-sm form-control-textarea"
-                placeholder="* Message"></textarea>
-      
-              <!--Multiple Validation Error messages -->
-              <div *ngIf="message?.touched && message?.invalid" class="form-validation-error-message">
-                <div *ngIf="message?.errors?.['required']">* Message required</div>
-      
-                <div *ngIf="message?.errors?.['whiteSpace']">
-                  * Message cannot contain whitespace
-                </div>
-      
-                <div *ngIf="message?.errors?.['minlength']">
-                  * Message should have a minimum of
-                  {{message?.errors?.['minlength'].requiredLength}}
-                  characters
-                </div>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              formControlName="subject"
+              id="subject"
+              class="form-control form-control-sm form-control-textbox"
+              placeholder="* Message subject"
+            />
+
+            <!--
+                    Custom validation
+                    Multiple Validation Error messages  
+                -->
+            <div
+              *ngIf="subject?.touched && subject?.invalid"
+              class="form-validation-error-message"
+            >
+              <div *ngIf="subject?.errors?.['required']">* Message subject required</div>
+             </div>
+          </div>
+
+          <div class="form-group">
+            <textarea
+              type="text"
+              formControlName="message"
+              id="message"
+              rows="5"
+              maxlength="300"
+              class="form-control form-control-sm form-control-textarea"
+              placeholder="* Message"
+            ></textarea>
+
+            <!--Multiple Validation Error messages -->
+            <div
+              *ngIf="message?.touched && message?.invalid"
+              class="form-validation-error-message"
+            >
+              <div *ngIf="message?.errors?.['required']">
+                * Message required
+              </div>
+
+              <div *ngIf="message?.errors?.['whiteSpace']">
+                * Message cannot contain whitespace
+              </div>
+
+              <div *ngIf="message?.errors?.['minlength']">
+                * Message should have a minimum of
+                {{message?.errors?.['minlength'].requiredLength}}
+                characters
               </div>
             </div>
-      
-            <div class="form-group">
-              <input type="submit" value="SUBMIT" (click)="sendMesssage()" class="btn btn-sm submit-button" />
-              <input type="reset" value="CLEAR" (click)="sendMesssage()" class="btn btn-sm clear-btn" />
-            </div>
-          </form>
-        </div>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="submit"
+              id="submit"
+              value="SUBMIT"
+              (click)="sendMesssage()"
+              class="btn btn-sm submit-button"
+            />
+            <input
+              type="reset"
+              id="reset"
+              value="CLEAR"
+              (click)="sendMesssage()"
+              class="btn btn-sm clear-btn"
+            />
+          </div>
+        </form>
       </div>
-      
-      <div class="contact-details-container">
-       
-        <div class="contact-details">
-         <p class="contacts-heading">contact details</p>
-          <ul class="contacts">
-            <li><fa-icon class="brand-icon"  [icon]="['fas', 'phone']"></fa-icon> (+27)82 638-4923 (Martin)</li>
-            <li><fa-icon class="brand-icon"  [icon]="['fas', 'envelope']"></fa-icon> martin&#64;mabundagroup.com </li>
-            <li><fa-icon class="brand-icon"  [icon]="['fas', 'phone']"></fa-icon> (+258)84 065-7493 (Yane)</li>
-            <li><fa-icon class="brand-icon"  [icon]="['fas', 'envelope']"></fa-icon> yaner&#64;mabundagroup.com</li>
-          </ul>
-        </div>
-        
-        <div class="contact-details">
-          <p class="contacts-heading">physical address</p>
-          <ul class="contacts">
-            <li> <fa-icon class="brand-icon"  [icon]="['fas', 'location-dot']"></fa-icon> 6876 Dijon Street</li>
-            <li>Lotus Gardens</li>
-            <li>Pretoria (ZA)</li>
-            <li>0008</li>
-          </ul>
-       </div>   
+    </div>
+
+    <div class="contact-details-container">
+      <div class="contact-details">
+        <p class="contacts-heading">contact details</p>
+        <ul class="contacts">
+          <li>
+            <fa-icon class="brand-icon" [icon]="['fas', 'phone']"></fa-icon>
+            (+27)82 638-4923 (Martin)
+          </li>
+          <li>
+            <fa-icon class="brand-icon" [icon]="['fas', 'envelope']"></fa-icon>
+            martin&#64;mabundagroup.com
+          </li>
+          <li>
+            <fa-icon class="brand-icon" [icon]="['fas', 'phone']"></fa-icon>
+            (+258)84 065-7493 (Yane)
+          </li>
+          <li>
+            <fa-icon class="brand-icon" [icon]="['fas', 'envelope']"></fa-icon>
+            yaner&#64;mabundagroup.com
+          </li>
+        </ul>
       </div>
+
+      <div class="contact-details">
+        <p class="contacts-heading">physical address</p>
+        <ul class="contacts">
+          <li>
+            <fa-icon
+              class="brand-icon"
+              [icon]="['fas', 'location-dot']"
+            ></fa-icon>
+            6876 Dijon Street
+          </li>
+          <li>Lotus Gardens</li>
+          <li>Pretoria (ZA)</li>
+          <li>0008</li>
+        </ul>
+      </div>
+    </div>
   </section>
 </div>

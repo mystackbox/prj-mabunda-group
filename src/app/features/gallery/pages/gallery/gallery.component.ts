@@ -1,6 +1,10 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgxGalleryAnimation, NgxGalleryImageSize, NgxGalleryOptions } from '@kolkov/ngx-gallery';
+import {
+  NgxGalleryAnimation,
+  NgxGalleryImageSize,
+  NgxGalleryOptions,
+} from '@kolkov/ngx-gallery';
 import { NgxGalleryImage } from '@kolkov/ngx-gallery';
 
 @Component({
@@ -14,28 +18,45 @@ export class GalleryComponent {
   galleryOptions: NgxGalleryOptions[] = [];
   galleryImages: NgxGalleryImage[] = [];
 
+  //Injecting services
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+    //load ngx-gallery based on this configurations
     this.galleryOptions = [
       {
         image: false,
         thumbnailsRemainingCount: true,
         thumbnailsColumns: 3,
         thumbnailsRows: 2,
-        height: '370px',
+        height: '310px',
+        width: '90%',
+        imageSwipe: true,
+        thumbnailsSwipe: true,
+      },
+      {
+        breakpoint: 480,
+        height: '180px',
         width: '100%',
       },
-      { breakpoint: 450, thumbnailsColumns: 2, height: '280px' },
-      { breakpoint: 660, thumbnailsColumns: 3, height: '270px' },
+      {
+        breakpoint: 690,
+        height: '240px',
+        width: '100%',
+      },
+      {
+        breakpoint: 786,
+        height: '240px',
+        width: '100%',
+      },
     ];
 
     this.galleryImages = [
-        {
-            small: 'gallery-img/3.jpeg',
-            medium: 'gallery-img/3.jpeg',
-            big: 'gallery-img/3.jpeg',
-          },
+      {
+        small: 'gallery-img/3.jpeg',
+        medium: 'gallery-img/3.jpeg',
+        big: 'gallery-img/3.jpeg',
+      },
       {
         small: 'gallery-img/1.jpeg',
         medium: 'gallery-img/1.jpeg',
@@ -51,13 +72,13 @@ export class GalleryComponent {
         medium: 'gallery-img/2.jpeg',
         big: 'gallery-img/2.jpeg',
       },
-    
+
       {
         small: 'gallery-img/4.jpeg',
         medium: 'gallery-img/4.jpeg',
         big: 'gallery-img/4.jpeg',
       },
-     
+
       {
         small: 'gallery-img/6.jpeg',
         medium: 'gallery-img/6.jpeg',
@@ -93,9 +114,20 @@ export class GalleryComponent {
         medium: 'gallery-img/12.jpeg',
         big: 'gallery-img/12.jpeg',
       },
+      {
+        small: 'gallery-img/13.jpeg',
+        medium: 'gallery-img/13.jpeg',
+        big: 'gallery-img/13.jpeg',
+      },
+      {
+        small: 'gallery-img/14.jpeg',
+        medium: 'gallery-img/14.jpeg',
+        big: 'gallery-img/14.jpeg',
+      },
     ];
   }
 
+  //reditect to contact us page
   redirectToContactUs() {
     this.router.navigate(['/contact-us']);
   }

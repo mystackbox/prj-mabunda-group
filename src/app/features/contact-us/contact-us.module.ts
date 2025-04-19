@@ -7,7 +7,7 @@ import {
   FaIconLibrary,
   FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faLocationDot, faMapLocationDot, faPhone, fas } from '@fortawesome/free-solid-svg-icons';
 import { MapComponent } from '../../components/google-map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { LoadingSpinnerComponent } from '../../components/loading-spinner/loading-spinner.component';
@@ -20,6 +20,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class ContactUsModule {
   //for Font-Awesome to be accessible globally
   constructor(library: FaIconLibrary) {
-    library.addIconPacks(fas);
+      library.addIcons(
+        faPhone,
+        faEnvelope,
+        faLocationDot
+      );
   }
 }

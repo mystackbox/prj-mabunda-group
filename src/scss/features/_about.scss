@@ -5,7 +5,7 @@
     @include page-container-styles;
 
     .header-banner {
-        background-image: url('/banners-img/9.jpg');
+        background-image: url('/banners-img/8.jpg');
         @include header-banner-styles;
     }
 
@@ -81,21 +81,10 @@
     }
 }
 
-@media screen and (max-width: 480px) {
+@include standard-media-queries;
 
+@media screen and (max-width: 680px) {
     #about-page-container {
-
-        .header-banner {
-            .Mabunda-Group-image {
-                height: 60px;
-            }
-        }
-
-        .page-content-description {
-            margin: 0 40px;
-        }
-
-
         .content-section {
             .cards-container {
                 flex-direction: column;
@@ -110,19 +99,4 @@
     }
 }
 
-@media screen and (min-width: 481px) and (max-width: 700px){
 
-    #about-page-container {
-
-        .header-banner {
-            .Mabunda-Group-image {
-                height: 60px;
-            }
-        }
-
-        .page-content-description {
-            margin: 0 80px;
-        }
-
-    }
-}

@@ -1,19 +1,24 @@
 import { Injectable } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+import { Title, Meta, MetaDefinition } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MetaTagService {
 
-  constructor(private title: Title, private meta: Meta) { }
+   //Injecting services
+  constructor(private _title: Title, private meta: Meta) { 
+  }
 
+  //Update Title 
   updateTitle(title: string) {
-    this.title.setTitle(`Mabunda Group - ${title}`);
-    this.meta.updateTag({ name: 'title', content: title })
+    this._title.setTitle(`Mabunda Group - ${title}`);
+    this.meta.updateTag({ name: 'title', content: title})
   }
 
-  updateDescription(desc: string) {
-    this.meta.updateTag({ name: 'description', content: desc })
+  //Update all MetaTags as per route changes
+  updateMetaTags(metaTags: MetaDefinition[]){
+    metaTags.forEach(m=> this.meta.updateTag(m));
   }
+
 }

@@ -2,8 +2,7 @@
 
 #services-page-container {
 
-    display: flex;
-    flex-direction: column;
+    @include page-container-styles;
 
     .header-banner {
         background-image: url('/banners-img/3.jpg');
@@ -15,38 +14,41 @@
     }
 
     .content-section {
-        padding: 15px 15px 0 15px;
+        padding: 10px 15px 0px 15px;
 
         .cards-container {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: auto;
-            margin: 10px 40px 5px 40px;
+            margin: 20px 30px 0px 30px;
 
             .card-container {
-                padding: 10px;
+
+                display: flex;
+                flex-direction: column;
+
+                padding: 5px;
                 border-radius: 7px;
-                margin: 0 15px;
+                margin: 0 5px;
 
-                .card-image,
-                .card-text,
-                .card-btn {
-                    margin: 5px 0;
-                }
+                .card-icon, .card-text, .services {
+                    margin-bottom: 10px;
+                } 
 
-                .card-image {
-                    height: 30px;
+                .card-icon {
+                    color: $icon-color;
                 }
 
                 .card-text {
                     text-transform: uppercase;
+                    font-size: 12px;
                     font-weight: bold;
                     color: olivedrab;
                 }
 
                 .services {
                     padding-bottom: 5px;
-                    color: grey;
+                    // border: 1px solid red;
                 }
 
                 &:hover {
@@ -58,58 +60,30 @@
     }
 }
 
+@include standard-media-queries;
+
 @media screen and (max-width: 579px) {
 
     #services-page-container {
-
-        .header-banner {
-            .Mabunda-Group-image {
-                height: 60px;
-            }
-        }
-
-        .page-content-description {
-            margin: 0 10px;
-        }
 
         .content-section {
             padding-top: 10px;
 
             .cards-container {
                 grid-template-columns: 1fr 1fr;
-
                 margin: 0;
+                padding: 0;
 
                 .card-container {
                     border-bottom: 1px solid lightgray;
                     border-radius: 0px;
+                    margin: 6px;
 
                     &:hover {
                         border-bottom: none;
                         border-radius: 7px;
                     }
                 }
-            }
-        }
-    }
-}
-
-@media (min-width: 580px) and (max-width: 760px) {
-    #services-page-container {
-
-        .header-banner {
-            .Mabunda-Group-image {
-                height: 60px;
-            }
-        }
-
-        .page-content-description {
-            margin: 0 50px;
-        }
-
-        .content-section {
-            .cards-container {
-                grid-template-columns: 1fr 1fr 1fr;
             }
         }
     }

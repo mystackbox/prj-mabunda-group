@@ -34,6 +34,18 @@
                     font-weight: bold;
                     color: green;
                 }
+                .submit-button {
+                    background-color: orange;
+                    border: none;
+                    padding: 5px 30px;
+                    color: #fff;
+                    min-width: 130px;
+    
+                    &:hover {
+                        background-color: green;
+                    }
+                }
+    
 
             }
         }
@@ -61,18 +73,7 @@
                 font-weight: bold;
             }
 
-            .card-btn {
-                background-color: brown;
-                border: none;
-                padding: 3px 20px;
-                color: #fff;
-                min-width: 130px;
-
-                &:hover {
-                    background-color: orange;
-                }
-            }
-
+            
             &:hover {
                 box-shadow: none;
                 cursor: pointer;
@@ -81,20 +82,11 @@
     }
 }
 
+@include standard-media-queries;
+
 @media screen and (max-width: 480px) {
 
     #about-page-container {
-
-        .header-banner {
-            .Mabunda-Group-image {
-                height: 60px;
-            }
-        }
-
-        .page-content-description {
-            margin: 0 40px;
-        }
-
 
         .content-section {
             .cards-container {
@@ -107,22 +99,5 @@
                 }
             }
         }
-    }
-}
-
-@media screen and (min-width: 481px) and (max-width: 700px){
-
-    #about-page-container {
-
-        .header-banner {
-            .Mabunda-Group-image {
-                height: 60px;
-            }
-        }
-
-        .page-content-description {
-            margin: 0 80px;
-        }
-
     }
 }

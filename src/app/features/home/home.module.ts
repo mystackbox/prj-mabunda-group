@@ -7,19 +7,30 @@ import {
   FaIconLibrary,
   FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import {
+  faChalkboardUser,
+  faChevronRight,
+  faHand,
+  faHandHoldingDroplet,
+  faHelmetSafety,
+  faPhone,
+  fas,
+  faScrewdriverWrench,
+} from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
-  declarations: [HomeComponent, ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    FontAwesomeModule,    
-  ],
+  declarations: [HomeComponent],
+  imports: [CommonModule, HomeRoutingModule, FontAwesomeModule],
 })
 export class HomeModule {
   //for Font-Awesome to be accessible globally
   constructor(library: FaIconLibrary) {
-    library.addIconPacks(fas);
+    library.addIcons(
+      faHandHoldingDroplet,
+      faHelmetSafety,
+      faScrewdriverWrench,
+      faChalkboardUser,
+      faChevronRight
+    );
   }
 }

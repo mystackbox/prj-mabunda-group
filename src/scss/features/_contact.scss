@@ -14,7 +14,7 @@
         @include page-content-description-styles;
     }
 
-    .content-section  {
+    .content-section {
         display: flex;
         flex-direction: row;
         gap: 10px;
@@ -55,22 +55,26 @@
 
             .form-validation-error-message {
                 color: red;
-                margin: -5px 0 1em 0;
+                margin: -10px 0 1em 0;
             }
 
             .btn {
-                border: 1px solid darkgray;
-                color: darkgray;
+                background-color: yellowgreen;
+                border: none; 
+                color: white;
                 border-radius: 0px;
-                padding: 5px 30px 3px 30px;
+                padding: 4px 15px 3px 15px;
+                font-size: 12px;
 
                 &:nth-child(1) {
                     margin-right: 10px;
+                    background-color: yellowgreen;
+                    border-color: yellowgreen;    
                 }
 
                 &:hover {
-                    background-color: yellowgreen;
-                    border-color: yellowgreen;
+                    background-color: red;
+                    border-color: red;
                     color: white;
                 }
             }
@@ -96,6 +100,8 @@
                 .contacts li {
                     list-style: none;
                     margin-left: -1em;
+                    margin-bottom: 0.2em;
+                    font-size: small;
                 }
             }
         }
@@ -105,20 +111,25 @@
 @media screen and (max-width: 600px) {
     #contact-us-page-container {
 
-        .page-content-description {
-            margin: 0 20px;
+        .header-banner {
+            height: 178px;
         }
 
-        .content-section  {
+        .content-section {
             display: flex;
             flex-direction: column;
 
             .contact-form-container {
                 padding: 10px 10px;
+
+                .btn {
+                    font-size: 10px;
+                }
             }
 
             .contact-details-container {
                 row-gap: 5px;
+
                 .contact-details {
                     padding: 10px;
                 }

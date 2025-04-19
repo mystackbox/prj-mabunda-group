@@ -2,11 +2,10 @@
 
 #gallery-page-container {
 
-    display: flex;
-    flex-direction: column;
+    @include page-container-styles;
 
     .header-banner {
-        background-image: url('/banners-img/1.jpg');
+        background-image: url('/banners-img/bg3.png');
         @include header-banner-styles;
     }
 
@@ -19,47 +18,21 @@
 
         .ngx-gallery {
             display: inline-block;
-            background-color: #f5f5f5;
-            padding: 20px 25px 30px 25px;
-            // margin-bottom: 10px;
 
-            .ngx-gallery-thumbnails .ngx-gallery-thumbnail  {
-                border: none;
-              }
-        }   
+            .ngx-gallery-thumbnails .ngx-gallery-thumbnail {
+                border: 5px solid lightgray;
+            }
+        }
     }
 }
 
-    @media screen and (max-width: 579px) {
+@include standard-media-queries;
 
-        #gallery-page-container {
-            .header-banner {
-                .Mabunda-Group-image {
-                    height: 60px;
-                }
-            }
+@media screen and (max-width: 579px) {
 
-            .page-content-description {
-                margin: 0 10px;
-            }
-
-            .content-section {
-                padding-top: 10px;
-            }
+    #gallery-page-container {
+        .content-section {
+            padding-top: 10px;
         }
     }
-
-    @media (min-width: 580px) and (max-width: 760px) {
-        #gallery-page-container {
-
-            .header-banner {
-                .Mabunda-Group-image {
-                    height: 60px;
-                }
-            }
-
-            .page-content-description {
-                margin: 0 50px;
-            }
-        }
-    }
+}

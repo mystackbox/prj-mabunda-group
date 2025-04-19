@@ -26,34 +26,34 @@
             justify-content: center;
 
             .card-container {
-                padding: 10px 6px;
-                border-radius: 7px;
+                display: flex;
+                flex-direction: column;
+                padding: 28px 28px;
                 margin: 5px 0;
                 box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
                 text-align: center;
                 min-width: 100px;
                 min-height: 16vh;
 
-                .card-image,
-                .card-text,
-                .card-btn {
-                    margin: 8px 0;
-                }
-
-                .card-image {
-                    height: 40px;
+                .card-icon {
+                    margin-bottom: 15px;
+                    color: $icon-color;
                 }
 
                 .card-text {
                     text-transform: uppercase;
+                    font-size: 12px;
+
                 }
 
                 .card-btn {
-                    background-color: orange;
-                    border: none;
+                    background-color: yellowgreen;
+                    border: none; 
+                    border-radius: 0px;
                     padding: 3px 20px;
                     color: #fff;
-                    min-width: 120px;
+                    max-width: 100%;
+                    margin-top: 15px;
 
                     &:hover {
                         background-color: red;
@@ -69,19 +69,10 @@
     }
 }
 
-@media screen and (max-width: 680px) {
+@include standard-media-queries;
 
+@media screen and (max-width: 480px) {
     #home-page-container {
-        .header-banner {
-            .Mabunda-Group-image {
-                height: 60px;
-            }
-        }
-
-        .page-content-description {
-            margin: 0 20px;
-        }
-
         .content-section {
             margin: 0px 12px;
             padding: 5px 0 0 0;
@@ -89,7 +80,38 @@
             .cards-container {
                 grid-template-columns: 1fr 1fr;
                 gap: 10px;
-                margin: 20 10px 0 10px;
+
+                .card-container {
+                    border-radius: 0px;
+
+                    .card-btn {
+                        padding: 3px 20px;
+                        min-width: 100px;
+                        font-size: 12px;
+
+                        .card-btn-icon {
+                            font-size: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 680px) {
+    #home-page-container {
+
+        .page-content-description {
+            margin: 0 80px;
+        }
+        .content-section {
+            margin: 0px 12px;
+            padding: 5px 0 0 0;
+
+            .cards-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
 
                 .card-container {
                     border-radius: 0px;
