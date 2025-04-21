@@ -20,7 +20,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: auto;
-            margin: 0px 30px 0px 30px;
+            margin: 0px 30px;
 
             .card-container {
 
@@ -77,7 +77,7 @@
                 .card-container {
                     border-bottom: 1px solid lightgray;
                     border-radius: 0px;
-                    margin: 6px;
+                    // margin: 6px;
 
                     &:hover {
                         border-bottom: none;
