@@ -25,6 +25,7 @@ const routes: Routes = [
             title: 'Welcome',
             metaTags: [
               { name: 'short-desc', content: 'EHS & Engineering Specialists' },
+              { name: 'keywords', content: 'Welcome to Mabunda Group, Mabunda Group, Your EHS & Engineering Specialists, OHS, Engineering' },
               { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
               { name: 'robots', content: 'index, follow'},
               { property: 'article:author', content: 'Yingisani'},
@@ -67,6 +68,7 @@ const routes: Routes = [
               title: 'Welcome',
               metaTags: [
                 { name: 'short-desc', content: 'EHS & Engineering Specialists' },
+                { name: 'keywords', content: 'Welcome to Mabunda Group, Mabunda Group, Your EHS & Engineering Specialists, OHS, Engineering' },
                 { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
                 { name: 'robots', content: 'index, follow'},
                 { property: 'article:author', content: 'Yingisani'},
@@ -109,6 +111,7 @@ const routes: Routes = [
               title: 'About Us',
               metaTags: [
               { name: 'short-desc', content: 'We are committed to serve' },
+              { name: 'keywords', content: 'Your EHS & Engineering Specialists, OHS, Engineering, EHS, Engineering, Specialists, EHS Specialists, Engineering Specialists' },
               { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
               { name: 'robots', content: 'index, follow'},
               { property: 'article:author', content: 'Yingisani'},
@@ -151,6 +154,7 @@ const routes: Routes = [
               title: 'Our Services',
               metaTags: [
                 { name: 'short-desc', content: 'Addressing our clients needs' },
+                { name: 'keywords', content: 'Environmental Health, Environmental Safety, Electrical Engineering, Electronics Engineering, Fire Services, EHS Training Services, Fire Training Services' },
                 { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
                 { name: 'robots', content: 'index, follow'},
                 { property: 'article:author', content: 'Yingisani'},
@@ -193,6 +197,7 @@ const routes: Routes = [
               title: 'Gallery',
               metaTags: [
                 { name: 'short-desc', content: 'Our successful projects' },
+                { name: 'keywords', content: 'Gallery, Mabunda Gallery, Mabunda Group Gallery, Mabunda Group Projects, Mabunda Group Recent Projects'},
                 { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
                 { name: 'robots', content: 'index, follow'},
                 { property: 'article:author', content: 'Yingisani'},
@@ -235,6 +240,7 @@ const routes: Routes = [
               title: 'Contact Us',
               metaTags: [
                 { name: 'short-desc', content: 'Get in tour with us today!' },
+                { name: 'keywords', content: 'Get in touch, Contact Us, Call us now, We are here, Send us queries, Forward your queries'},
                 { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
                 { name: 'robots', content: 'index, follow'},
                 { property: 'article:author', content: 'Yingisani'},
