@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
 @Component({
   selector: 'app-contact-us',
@@ -42,8 +43,8 @@ export class ContactUsComponent {
     return this._contactForm.get('emailAddress');
   }
 
-   //getter for form-control[fullName]
-   get subject() {
+  //getter for form-control[fullName]
+  get subject() {
     return this._contactForm.get('subject');
   }
 
@@ -53,6 +54,21 @@ export class ContactUsComponent {
   }
 
   sendMesssage() {
-    //logic here...
+
+    const form = document.querySelector('form') as HTMLFormElement;
+
+    emailjs
+      .sendForm('service_2pklnjh', 'service_2pklnjh', form, 'Pe8KJ-tOAeAn4A5Fd')
+      .then(
+        (result: EmailJSResponseStatus) => {
+          console.log('Email sent successfully!', result.text);
+          alert('Message sent!');
+          form.reset();
+        },
+        (error) => {
+          console.error('Failed to send email.', error.text);
+          alert('Failed to send message.');
+        }
+      );
   }
 }

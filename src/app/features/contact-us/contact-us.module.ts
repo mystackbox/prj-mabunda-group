@@ -13,9 +13,10 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { LoadingSpinnerComponent } from '../../components/loading-spinner/loading-spinner.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
-  declarations: [ContactUsComponent, MapComponent, LoadingSpinnerComponent,],
-  imports: [CommonModule, ContactUsRoutingModule, FontAwesomeModule, GoogleMapsModule, ReactiveFormsModule],
+  declarations: [ContactUsComponent, MapComponent, LoadingSpinnerComponent],
+  imports: [CommonModule, ContactUsRoutingModule, FontAwesomeModule, GoogleMapsModule, ReactiveFormsModule]
 })
 export class ContactUsModule {
   //for Font-Awesome to be accessible globally
