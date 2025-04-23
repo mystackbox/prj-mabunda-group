@@ -11,63 +11,75 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 export class ContactUsComponent {
   //local variables declaration
   _contactForm!: FormGroup;
-  _errorMessage: string = '';
+  _responseStatus: any;
   _loading: boolean = false;
+  defaultMessageSubject: string = '';
+
+  messageSubjects: any;
+
+  constructor() {}
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this._loading = true;
-    }, 1500);
-
+    this._responseStatus = undefined;
     this._loading = false;
+
+    this.defaultMessageSubject = '--- select message subject ---';
+    this.messageSubjects = [
+      { id: 1, name: 'EHS services related query' },
+      { id: 2, name: 'Engineering services related query' },
+      { id: 3, name: 'Fire services related query' },
+      { id: 4, name: 'Traning services related query' },
+    ];
 
     //Initialize the form
     this._contactForm = new FormGroup({
-      fullName: new FormControl('', [Validators.required]),
-      emailAddress: new FormControl('', [
+      name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      subject: new FormControl(this.defaultMessageSubject, [
         Validators.required,
-        Validators.email,
       ]),
-      subject: new FormControl('', [Validators.required]),
       message: new FormControl('', [Validators.required]),
     });
   }
 
   //getter for form-control[fullName]
-  get fullName() {
-    return this._contactForm.get('fullName');
+  get name() {
+    return this._contactForm?.get('name');
   }
 
   //getter for form-control[emailAddress]
-  get emailAddress() {
-    return this._contactForm.get('emailAddress');
+  get email() {
+    return this._contactForm?.get('email');
   }
 
-  //getter for form-control[fullName]
+  //getter for form-control[subject]
   get subject() {
     return this._contactForm.get('subject');
   }
 
   //getter for form-control [message]
   get message() {
-    return this._contactForm.get('message');
+    return this._contactForm?.get('message');
   }
 
-  sendMesssage() {
+  //send form data to mailjs service
+  async sendMesssage() {
+    if (this._contactForm.invalid) return;
 
-    const form = document.querySelector('form') as HTMLFormElement;
-
-    emailjs
-      .sendForm('service_2pklnjh', 'service_2pklnjh', form, 'Pe8KJ-tOAeAn4A5Fd')
+    const form = this._contactForm.value;
+    console.log(form);
+    this._loading = true;
+    await emailjs
+      .send('service_2pklnjh', 'template_dq5ahwp', form, 'Pe8KJ-tOAeAn4A5Fd')
       .then(
         (result: EmailJSResponseStatus) => {
-          console.log('Email sent successfully!', result.text);
-          alert('Message sent!');
-          form.reset();
+          this._responseStatus = true;
+          this._contactForm.reset();
+          this._loading = false;
         },
         (error) => {
-          console.error('Failed to send email.', error.text);
-          alert('Failed to send message.');
+          if (error) this._responseStatus = false;
+          this._loading = false;
         }
       );
   }
