@@ -6,13 +6,19 @@
   <!--content-section-->
   <section class="content-section">
     <div class="contact-form-container">
-
-     
-        
-
         <p class="form-section-heading">
           CONTACT FORM
         </p>
+
+        
+
+        <!--form-->
+        <form
+          [formGroup]="_contactForm"
+          class="form"
+          id="form"
+          (ngSubmit)="sendMesssage()"
+        >
 
         <div
           *ngIf="_responseStatus == true"
@@ -31,19 +37,21 @@
         >
           <fa-icon
             class="brand-icon"
-            [icon]="['fas', 'circle-check']"
+            [icon]="['fas', 'triangle-exclamation']"
           ></fa-icon>
           Sorry! sending form message failed.
         </div>
 
-
-        <!--form-->
-        <form
-          [formGroup]="_contactForm"
-          class="form"
-          id="form"
-          (ngSubmit)="sendMesssage()"
-        >
+        <div
+        *ngIf="_formStatus"
+        class="errorResponse"
+      >
+        <fa-icon
+          class="brand-icon"
+          [icon]="['fas', 'triangle-exclamation']"
+        ></fa-icon>
+        Please provide all the required form details.
+      </div>
         
         <div *ngIf="_loading == true">
           <app-loading-spinner></app-loading-spinner>
@@ -141,7 +149,7 @@
               type="text"
               formControlName="message"
               id="message"
-              rows="5"
+              rows="3"
               maxlength="300"
               class="form-control form-control-sm form-control-textarea"
               placeholder="* Message"
@@ -176,10 +184,11 @@
               class="btn btn-sm submit-button"
             />
             <input
-              type="reset"
+              type="button"
               id="reset"
               value="CLEAR"
               class="btn btn-sm clear-btn"
+              (click)="clear()"
             />
           </div>
         </form>

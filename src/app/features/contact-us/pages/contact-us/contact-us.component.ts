@@ -11,7 +11,8 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 export class ContactUsComponent {
   //local variables declaration
   _contactForm!: FormGroup;
-  _responseStatus: any;
+  _responseStatus: any = undefined;
+  _formStatus: boolean = false;
   _loading: boolean = false;
   defaultMessageSubject: string = '';
 
@@ -20,10 +21,9 @@ export class ContactUsComponent {
   constructor() {}
 
   ngOnInit(): void {
-    this._responseStatus = undefined;
     this._loading = false;
-
     this.defaultMessageSubject = '--- select message subject ---';
+
     this.messageSubjects = [
       { id: 1, name: 'EHS services related query' },
       { id: 2, name: 'Engineering services related query' },
@@ -40,6 +40,7 @@ export class ContactUsComponent {
       ]),
       message: new FormControl('', [Validators.required]),
     });
+    
   }
 
   //getter for form-control[fullName]
@@ -64,23 +65,33 @@ export class ContactUsComponent {
 
   //send form data to mailjs service
   async sendMesssage() {
-    if (this._contactForm.invalid) return;
+
+    if (this._contactForm.invalid) {
+      this._formStatus = true;
+      return;
+    } 
 
     const form = this._contactForm.value;
-    console.log(form);
     this._loading = true;
+
     await emailjs
       .send('service_2pklnjh', 'template_dq5ahwp', form, 'Pe8KJ-tOAeAn4A5Fd')
       .then(
         (result: EmailJSResponseStatus) => {
           this._responseStatus = true;
           this._contactForm.reset();
-          this._loading = false;
+          
         },
         (error) => {
           if (error) this._responseStatus = false;
-          this._loading = false;
         }
       );
+      this._loading = false;
+  }
+
+  clear(){
+    this._responseStatus = undefined;
+    this._contactForm.reset();
+    this._formStatus = false;
   }
 }
