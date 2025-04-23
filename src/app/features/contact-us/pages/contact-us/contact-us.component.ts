@@ -91,7 +91,7 @@ export class ContactUsComponent {
 
   clear(){
     this._responseStatus = undefined;
-    this._contactForm.reset();
+    this.defaultMessageSubject = '--- select message subject ---';
     this._formStatus = false;
   }
 }
