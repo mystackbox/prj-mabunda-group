@@ -9,13 +9,13 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
   standalone: false,
 })
 export class ContactUsComponent {
-  //local variables declaration
+
+  //local variables
   _contactForm!: FormGroup;
   _responseStatus: any = undefined;
   _formStatus: boolean = false;
   _loading: boolean = false;
   defaultMessageSubject: string = '';
-
   messageSubjects: any;
 
   constructor() {}
@@ -31,7 +31,7 @@ export class ContactUsComponent {
       { id: 4, name: 'Traning services related query' },
     ];
 
-    //Initialize the form
+    //Initialize form
     this._contactForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -40,7 +40,6 @@ export class ContactUsComponent {
       ]),
       message: new FormControl('', [Validators.required]),
     });
-    
   }
 
   //getter for form-control[fullName]
@@ -65,11 +64,10 @@ export class ContactUsComponent {
 
   //send form data to mailjs service
   async sendMesssage() {
-
     if (this._contactForm.invalid) {
       this._formStatus = true;
       return;
-    } 
+    }
 
     const form = this._contactForm.value;
     this._loading = true;
@@ -80,16 +78,16 @@ export class ContactUsComponent {
         (result: EmailJSResponseStatus) => {
           this._responseStatus = true;
           this._contactForm.reset();
-          
         },
         (error) => {
           if (error) this._responseStatus = false;
         }
       );
-      this._loading = false;
+    this._loading = false;
   }
 
-  clear(){
+  //clear or reset variables
+  clear() {
     this._responseStatus = undefined;
     this.defaultMessageSubject = '--- select message subject ---';
     this._formStatus = false;

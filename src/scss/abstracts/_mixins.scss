@@ -7,11 +7,23 @@
 }
 
 @mixin page-header {
-  text-transform: uppercase;
+ 
+  .weather-container {
+    text-align: right;
+    font-size: 10px;
+    padding-right: 20px;
+    margin-bottom: -2em;
+
+    .weather-img {
+      height: 38px;
+      margin-right: -0.5em;
+    }
+  }
 
   .page-title,
   .page-description {
     margin: 12px 0;
+    text-transform: uppercase;
   }
 
   .page-title {
@@ -19,6 +31,7 @@
     font-weight: bold;
     color: green;
   }
+
 }
 
 @mixin header-banner-styles {
@@ -28,6 +41,7 @@
   border: 6px solid white;
   text-transform: uppercase;
   color: #fff;
+
   .Mabunda-Group-image {
     height: 80px;
   }
@@ -80,4 +94,3 @@
   color: $icon-color;
   margin-right: 5px;
 }
-

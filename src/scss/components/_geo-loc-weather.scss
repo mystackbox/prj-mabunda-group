@@ -1,0 +1,9 @@
+
+  /*  Site header */
+@use '../abstracts' as *;
+
+.weather-container {
+    .temperature, .weather-img {
+        cursor: pointer;
+    } 
+}

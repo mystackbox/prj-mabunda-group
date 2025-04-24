@@ -1,0 +1,15 @@
+<div class="weather-container" *ngIf="weatherData" alt="Weather today">
+  <img
+    class="weather-img"
+    title="{{ weatherData.weather[0].description | titlecase }}"
+    [src]="
+      'https://openweathermap.org/img/wn/' +
+      weatherData.weather[0].icon +
+      '@2x.png'
+    "
+    alt="weather"
+  />
+  <span class="temperature" alt="temperature" title="Temperature">
+    {{ weatherData.main.temp }} °C
+  </span>
+</div>

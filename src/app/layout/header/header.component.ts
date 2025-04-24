@@ -11,6 +11,8 @@ import { MetaTagService } from '../../shared/services/mata-tags/meta-tags';
     standalone: false
 })
 export class HeaderComponent {
+
+  //variables
   title: any;
   headerTitle: any;
   headerDescription: any;

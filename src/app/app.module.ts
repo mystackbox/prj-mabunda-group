@@ -36,6 +36,8 @@ import {
 import { ShareButtons } from 'ngx-sharebuttons/buttons';
 import { provideShareButtonsOptions } from 'ngx-sharebuttons';
 import { shareIcons } from 'ngx-sharebuttons/icons';
+import { GeoLocWeatherComponent } from './components/geo-loc-weather/geo-loc-weather.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { shareIcons } from 'ngx-sharebuttons/icons';
     FooterComponent,
     NavBarComponent,
     ShareButtonsComponent,
+    GeoLocWeatherComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,8 +55,10 @@ import { shareIcons } from 'ngx-sharebuttons/icons';
     ShareButtons,
     CommonModule,
     FontAwesomeModule,
+
   ],
   providers: [
+    
     //Url requests - structure
     {
       provide: LocationStrategy,
@@ -61,8 +66,8 @@ import { shareIcons } from 'ngx-sharebuttons/icons';
     },
     Title,
     provideClientHydration(withEventReplay()),
-
     provideShareButtonsOptions(shareIcons()),
+    provideHttpClient()
   ],
 
   bootstrap: [AppComponent],

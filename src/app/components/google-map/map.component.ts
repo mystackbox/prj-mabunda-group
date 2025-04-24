@@ -11,15 +11,6 @@ export class MapComponent {
   center: google.maps.LatLngLiteral = { lat: -25.749, lng: 28.0947 };
   zoom = 10;
   
-  constructor(){
-
-  }
-
-  ngOnInit(){
-    
-    
-  }
-
 
   options: google.maps.MapOptions = {
     center: { lat: -25.749, lng: 28.0947 },

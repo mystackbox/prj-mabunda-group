@@ -34,8 +34,12 @@
   
   @mixin standard-media-queries {
     @include screen-size-xs {
-  
+     
       .header-section {
+        
+        .weather-container {
+          padding-right: 0px;
+        }
   
         .page-title,
         .page-description {
