@@ -3,87 +3,90 @@
 
 //reusable media queries
 @mixin screen-size-xs {
-    @media (max-width: map.get($media-query-breakpoints, 'xs')) {
-      @content
-    }
+  @media (max-width: map.get($media-query-breakpoints, 'xs')) {
+    @content
   }
-  
-  @mixin screen-size-sm {
-    @media (max-width: map.get($media-query-breakpoints, 'sm')) {
-      @content
-    }
+}
+
+@mixin screen-size-sm {
+  @media (max-width: map.get($media-query-breakpoints, 'sm')) {
+    @content
   }
-  
-  @mixin screen-size-md {
-    @media (max-width: map.get($media-query-breakpoints, 'md')) {
-      @content
-    }
+}
+
+@mixin screen-size-md {
+  @media (max-width: map.get($media-query-breakpoints, 'md')) {
+    @content
   }
-  
-  @mixin screen-size-lg {
-    @media (max-width: map.get($media-query-breakpoints, 'lg')) {
-      @content
-    }
+}
+
+@mixin screen-size-lg {
+  @media (max-width: map.get($media-query-breakpoints, 'lg')) {
+    @content
   }
-  
-  @mixin screen-size-xl {
-    @media (max-width: map.get($media-query-breakpoints, 'xl')) {
-      @content
-    }
+}
+
+@mixin screen-size-xl {
+  @media (max-width: map.get($media-query-breakpoints, 'xl')) {
+    @content
   }
-  
-  @mixin standard-media-queries {
-    @include screen-size-xs {
-     
-      .header-section {
-        
-        .weather-container {
-          padding-right: 0px;
-        }
-  
-        .page-title,
-        .page-description {
-          margin: 7px 0;
+}
+
+@mixin standard-media-queries {
+  @include screen-size-xs {
+
+    .header-section {
+
+      .weather-container {
+        padding-right: 0px;
+        .temperature {
+          font-size: 12px;
         }
       }
-  
-      #home-page-container,
-      #about-page-container,
-      #services-page-container,
-      #gallery-page-container,
-      #notfound-page-container {
-        
-        .header-banner {
-          padding: 20px;
-  
-          .Mabunda-Group-image {
-            height: 45px;
-          }
-  
-          .title-name {
-            font-size: 16px;
-            font-weight: 500;
-          }
-  
-          .banner-button {
-            font-size: 10px;
-            padding: 3px 15px;
-          }
+
+      .page-title,
+      .page-description {
+        margin: 7px 0;
+      }
+    }
+
+    #home-page-container,
+    #about-page-container,
+    #services-page-container,
+    #gallery-page-container,
+    #notfound-page-container,
+    #weather-page-container {
+
+      .header-banner {
+        padding: 20px;
+
+        .Mabunda-Group-image {
+          height: 45px;
         }
-  
-        .page-content-description {
-          margin: 0 20px;
+
+        .title-name {
+          font-size: 16px;
+          font-weight: 500;
+        }
+
+        .banner-button {
+          font-size: 10px;
+          padding: 3px 15px;
         }
       }
-  
+
+      .page-content-description {
+        margin: 0 20px;
+      }
     }
-  
-    @include screen-size-sm {}
-  
-    @include screen-size-md {}
-  
-    @include screen-size-lg {}
-  
-    @include screen-size-xl {}
+
   }
 
+  @include screen-size-sm {}
+
+  @include screen-size-md {}
+
+  @include screen-size-lg {}
+
+  @include screen-size-xl {}
+}

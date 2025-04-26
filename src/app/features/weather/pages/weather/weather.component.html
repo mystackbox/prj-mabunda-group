@@ -1,1 +1,103 @@
-<p>weather works!</p>
+<div id="weather-page-container" class="weather-page-container">
+  <section class="header-banner">
+    <img
+      src="banner-icons/30.png"
+      alt="Mabunda Group"
+      class="Mabunda-Group-image responsive"
+    />
+    <div class="title-name">mabunda group</div>
+    <div (click)="redirectToContactUs()" class="btn btn-sm banner-button">
+      <fa-icon class="card-icon" [icon]="['fas', 'phone']"></fa-icon>
+      get in touch
+    </div>
+  </section>
+
+  <!-- <section *ngIf="weatherData != null"  class="page-content-description">
+    <p class="content-title">
+
+    </p>
+    <hr class="content-description-underline" />
+  </section> -->
+
+  <section class="content-section">
+
+    <div *ngIf="weatherData != null" class="today-weather">
+      <img
+        class="weather-img"
+        title="{{ weatherData.weather[0].description | titlecase }}"
+        [src]="
+          'https://openweathermap.org/img/wn/' +
+          weatherData.weather[0].icon +
+          '@2x.png'
+        "
+        alt="weather"
+      />
+      <div class="today-weather-details">
+        <div class="weather-data-card">
+          <fa-icon
+            class="title-icon"
+            [icon]="['fas', 'location-dot']"
+          ></fa-icon>
+          {{ weatherData.name }} ({{ weatherData.sys.country }})
+        </div>
+        <div class="weather-data-card">
+          <fa-icon
+            class="title-icon"
+            [icon]="['fas', 'calendar-days']"
+          ></fa-icon>
+          {{ todayDate | date : "dd-MM-yyyy" }}
+        </div>
+        <div class="weather-data-card">
+          <fa-icon
+            class="title-icon"
+            [icon]="['fas', 'temperature-high']"
+          ></fa-icon>
+          {{ weatherData.main.temp }} °C
+        </div>
+        <div class="weather-data-card">
+          <fa-icon class="title-icon" [icon]="['fas', 'cloud']"></fa-icon>
+          {{ weatherData.weather[0].description | titlecase }}
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="forecastData != null" class="cards-container">
+      <div *ngFor="let forecast of forecastData">
+        <div class="card-container">
+
+          <!-- <div>
+              <img
+              class="weather-img"
+              title="{{ forecast.weather[0].description | titlecase }}"
+              [src]="
+                'https://openweathermap.org/img/wn/' +
+                forecast.weather[0].icon +
+                '@2x.png'
+              "
+              alt="weather"
+              />
+          </div> -->
+
+          <div class="weather-services">
+
+            <div>
+              <fa-icon class="title-icon" [icon]="['fas', 'cloud']"></fa-icon>
+              {{ forecast.weather[0].description | titlecase  }}
+            </div>
+            <div>
+              <fa-icon class="title-icon" [icon]="['fas', 'calendar-days']"></fa-icon>
+              {{ forecast.dt_txt.split(" ")[0] }}
+            </div>
+            <div>
+              <fa-icon class="title-icon" [icon]="['fas', 'clock']"></fa-icon>
+              {{ forecast.dt_txt.split(" ")[1] }}
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+  </section>
+</div>

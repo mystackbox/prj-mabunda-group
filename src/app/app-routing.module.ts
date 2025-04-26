@@ -272,6 +272,48 @@ const routes: Routes = [
       },
 
       {
+        path: 'weather',
+        loadChildren: () =>
+          import('./features/weather/weather.module').then(
+            (m): typeof ContactUsModule => m.WeatherModule
+          ),
+          data: {
+            seo: {
+              title: 'Weather',
+              metaTags: [
+                { name: 'short-desc', content: 'Your weather forecast today' },
+                { name: 'keywords', content: 'Get in touch, Contact Us, Call us now, We are here, Send us queries, Forward your queries'},
+                { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
+                { name: 'robots', content: 'index, follow'},
+                { property: 'article:author', content: 'Yingisani'},
+  
+                { property: 'og:site_name', content: 'Mabunda Group' },
+                { property: 'og:title', content: 'Your EHS & Engineering Specialists' },
+                { name: 'description', proprety: 'og:description', content: 'EHS and Engineering consulting company, geared to assist the clients to comply with OHS, Environmental, Food Safety and other applicable legislation and to empower all interested and affected stakeholders.' },
+                { property: 'og:type', content: 'Website' },
+                { property: 'og:image', content: environment.appUrl + '/seo-img/share-img.png' },
+                { property: 'og:image:secure_url', content: environment.appUrl + '/seo-img/share-img.png' },
+                { property: 'og:image:tyep', content: 'image/png' },
+                { property: 'og:image:width', content: '1200' },
+                { property: 'og:image:height', content: '630' },
+                { property: 'og:image:alt', content: 'Your EHS & Engineering Specialists' },
+                { property: 'og:url', content: environment.appUrl},
+  
+                { name: 'twitter:card', content: 'Summary'},
+                { name: 'twitter:title', content: 'Your EHS & Engineering Specialists'},
+                { name: 'twitter:description', content: 'EHS and Engineering consulting company, geared to assist the clients to comply with OHS.' },
+                { name: 'twitter:url', content: environment.appUrl},
+                { name: 'twitter:site', content: '@mabundagroup'},
+                { name: 'twitter:creator', content: '@mabundagroup'},
+                { name: 'twitter:image', content: environment.appUrl + '/seo-img/share-img.png' },
+                { name: 'twitter:image:src', content: environment.appUrl + '/seo-img/share-img.png' },
+                { name: 'twitter:image:alt', content: 'Your EHS & Engineering Specialists' },
+              ]
+            }
+          }
+      },
+
+      {
         path: 'page-not-found',
         loadChildren: () =>
           import('./features/not-found/not-found.module').then(

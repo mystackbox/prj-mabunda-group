@@ -8,8 +8,14 @@
       '@2x.png'
     "
     alt="weather"
+    (click)="redirectToWeacther()"
   />
-  <span class="temperature" alt="temperature" title="Temperature">
+  <span
+    class="temperature"
+    alt="temperature"
+    title="Temperature"
+    (click)="redirectToWeacther()"
+  >
     {{ weatherData.main.temp }} °C
   </span>
 </div>

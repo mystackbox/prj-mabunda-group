@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WeatherService } from '../../shared/services/weather/weather.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-geo-loc-weather',
@@ -10,31 +11,37 @@ import { WeatherService } from '../../shared/services/weather/weather.service';
 export class GeoLocWeatherComponent {
   weatherData: any;
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService, private router: Router) {}
 
   //fetch weather data
   ngOnInit(): void {
-    this.getLocationWeather();
+    this.getGeoLocationWeather();
   }
 
-  //get current geolocation weather forecast
-  getLocationWeather() {
-    navigator.geolocation.getCurrentPosition(position => {
+  //get current geolocation weather
+  getGeoLocationWeather() {
+    navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
 
-      this.weatherService.getWeatherByCoordinates(latitude, longitude).subscribe({
+      this.weatherService
+        .getWeatherByGeoLocation(latitude, longitude)
+        .subscribe({
           next: (data) => {
             this.weatherData = data;
           },
           error: (error) => {
             console.error('Error fetching weather:', error);
-            throw new error;
+            throw new error();
           },
           complete: () => {
-            console.info('fetching data completed')
-          }
-        }
-      );
+            console.info('fetching data completed');
+          },
+        });
     });
   }
+
+  redirectToWeacther() {
+    this.router.navigate(['/weather']);
+  }
+
 }

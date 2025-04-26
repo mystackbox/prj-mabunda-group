@@ -1,0 +1,116 @@
+@use '../abstracts' as *;
+
+#weather-page-container {
+
+    @include page-container-styles;
+
+    .header-banner {
+        background-image: url('/banners-img/11.png');
+        @include header-banner-styles;
+    }
+
+    .page-content-description {
+        @include page-content-description-styles;
+
+    }
+
+    .content-section {
+        padding: 10px 15px 10px 15px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        .today-weather {
+            text-align: center;
+            margin: -1em 0 1em 0;
+
+            .today-weather-details {
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                column-gap: 5px;
+                justify-content: center;
+
+                .weather-data-card {
+                    padding: 5px 20px;
+                    border: none;
+                    background-color: lightgrey;
+                    border-radius: 6px;
+
+                    .title-icon {
+                        margin-right: 3px;
+
+                    }
+                }
+            }
+
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 20px;
+            padding: 0 20px;
+
+            .card-container {
+
+                display: flex;
+                flex-direction: column;
+                border-radius: 7px;
+
+                padding: 5px;
+                box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 24px;
+                cursor: pointer;
+
+                .weather-img {
+                    height: 50px;
+                    width: 50px;
+                }
+
+                .weather-services {
+                    padding: 15px;
+                    font-size: 12px;
+                    text-align: left;
+                }
+
+                &:hover {
+                    box-shadow: none;
+                    cursor: pointer;
+                    background-color: lightgrey
+                }
+            }
+        }
+    }
+}
+
+@include standard-media-queries;
+
+@media screen and (max-width: 579px) {
+
+    #weather-page-container {
+
+        .content-section {
+            padding: 10px 0;
+
+            .today-weather {
+                .today-weather-details {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 5px;
+
+                    .weather-data-card {
+                        display: flex;
+                        flex-direction: column;
+                        padding:  20px 4px; 
+                    }
+                }
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr 1fr;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+}
