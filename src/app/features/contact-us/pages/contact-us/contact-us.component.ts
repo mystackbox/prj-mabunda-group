@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact-us',
@@ -9,7 +10,6 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
   standalone: false,
 })
 export class ContactUsComponent {
-
   //local variables
   _contactForm!: FormGroup;
   _responseStatus: any = undefined;
@@ -63,27 +63,50 @@ export class ContactUsComponent {
   }
 
   //send form data to mailjs service
-  async sendMesssage() {
+  sendMesssage() {
     if (this._contactForm.invalid) {
       this._formStatus = true;
       return;
     }
 
-    const form = this._contactForm.value;
-    this._loading = true;
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to submit the form?',
+      icon: 'warning',
+      iconColor: 'red',
+      showCancelButton: true,
+      confirmButtonText: 'Submit',
+      confirmButtonColor: 'red',
+      cancelButtonText: 'Cancel',
+      cancelButtonColor: '#20B2AA',
+    }).then(async (result) => {
 
-    await emailjs
-      .send('service_2pklnjh', 'template_dq5ahwp', form, 'Pe8KJ-tOAeAn4A5Fd')
-      .then(
-        (result: EmailJSResponseStatus) => {
-          this._responseStatus = true;
-          this._contactForm.reset();
-        },
-        (error) => {
-          if (error) this._responseStatus = false;
-        }
-      );
-    this._loading = false;
+      if (result.isConfirmed) {
+        
+        const form = this._contactForm.value;
+        this._loading = true;
+
+        await emailjs
+          .send(
+            'service_2pklnjh',
+            'template_dq5ahwp',
+            form,
+            'Pe8KJ-tOAeAn4A5Fd'
+          )
+          .then(
+            (result: EmailJSResponseStatus) => {
+              this._responseStatus = true;
+              this._contactForm.reset();
+            },
+            (error) => {
+              if (error) this._responseStatus = false;
+            }
+          );
+        this._loading = false;
+
+        Swal.fire('Successful!', 'Your form has been submitted.', 'success');
+      }
+    });
   }
 
   //clear or reset variables
