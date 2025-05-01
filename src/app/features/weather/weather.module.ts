@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { WeatherRoutingModule } from './weather-routing.module';
 import { WeatherComponent } from './pages/weather/weather.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCalendarDay, faCalendarDays, faClock, faCloud, faCloudSun, faLocationDot, faTemperatureHigh } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarDays, faClock, faCloud, faDroplet, faGauge, faLocationDot, faTemperatureHigh } from '@fortawesome/free-solid-svg-icons';
+import { SharedModule } from '../../shared/modules/shared.module';
 
 @NgModule({
   declarations: [WeatherComponent],
-  imports: [CommonModule, WeatherRoutingModule, FontAwesomeModule],
+  imports: [SharedModule, CommonModule, WeatherRoutingModule, FontAwesomeModule, SharedModule],
 })
 export class WeatherModule {
     //for Font-Awesome to be accessible globally
@@ -18,8 +19,9 @@ export class WeatherModule {
           faTemperatureHigh,
           faCloud,
           faCalendarDays,
-          faClock
-
+          faClock,
+          faDroplet,
+          faGauge
             );
       }
 }

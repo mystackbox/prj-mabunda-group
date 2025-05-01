@@ -5,44 +5,75 @@
     @include page-container-styles;
 
     .header-banner {
-        background-image: url('/banners-img/11.png');
+        background-image: url('/banners-img/1.jpg');
         @include header-banner-styles;
     }
 
     .page-content-description {
         @include page-content-description-styles;
-
     }
 
     .content-section {
-        padding: 10px 15px 10px 15px;
+
         display: flex;
         flex-direction: column;
-        row-gap: 20px;
+        row-gap: 10px;
+        position: relative;
+
+        .spinner-text {
+            font-weight: bold;
+            color: #fff;
+            font-size: 16px;
+        }
 
         .today-weather {
             text-align: center;
-            margin: -1em 0 1em 0;
 
+            .weather-img {
+                margin: -1em 0 -1.5em 0;
+            }
+
+            .weather-condition {
+                color: green;
+            }
             .today-weather-details {
                 display: grid;
                 grid-template-columns: auto auto auto auto;
-                column-gap: 5px;
+                column-gap: 10px;
                 justify-content: center;
 
                 .weather-data-card {
                     padding: 5px 20px;
-                    border: none;
-                    background-color: lightgrey;
+                    color: grey;
+                    background-color: #f8f9fa;
                     border-radius: 6px;
+                    min-width: 150px;
 
                     .title-icon {
                         margin-right: 3px;
+                        color: green;
+                    }
 
+                    &:hover {
+                        background-color: red;
+                        color: white;
+
+                        .title-icon {
+                            color: white;
+                        }
                     }
                 }
             }
 
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .content-description-underline {
+            width: 60%;
+            margin: 15px auto;
+            font-weight: bolder;
         }
 
         .cards-container {
@@ -53,11 +84,9 @@
             padding: 0 20px;
 
             .card-container {
-
                 display: flex;
                 flex-direction: column;
                 border-radius: 7px;
-
                 padding: 5px;
                 box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 24px;
                 cursor: pointer;
@@ -65,21 +94,108 @@
                 .weather-img {
                     height: 50px;
                     width: 50px;
+                    color: greenyellow;
                 }
 
-                .weather-services {
+                .weather-info-summary {
                     padding: 15px;
-                    font-size: 12px;
-                    text-align: left;
+                    position: relative;
+
+                    .summary-icon {
+                        color: green;
+                    }
+
+                    .weather-summary-item {
+                        font-size: 12px;
+                    }
+
+                    .overlay {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background: rgba(0, 0, 0, 0.5);
+                        overflow: hidden;
+                        width: 100%;
+                        height: 0%;
+                        transition: .7s ease;
+                        border-radius: 7px;
+
+                        .overlay-container {
+                            color: lightgrey;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            -webkit-transform: translate(-50%, -50%);
+                            -ms-transform: translate(-50%, -50%);
+                            transform: translate(-50%, -50%);
+                            padding: 2px;
+                            width: 100%;
+                            height: 100%;
+
+                            display: grid;
+                            grid-template-columns: 1fr 2fr;
+
+                            .weasther-icon-container {
+                                margin: auto;
+
+                                img {
+                                    height: 80px;
+                                    width: 80px;
+                                }
+                            }
+
+                            .weather-info-details {
+
+                                text-align: left;
+                                display: flex;
+                                flex-direction: column;
+
+                                .weather-info-item {
+                                    font-size: 10px;
+                                    align-items: center;
+                                    display: flex;
+                                    column-gap: 5px;
+                                }
+                            }
+
+                        }
+                    }
+
+                    &:hover .overlay {
+                        cursor: pointer;
+                        height: 100%;
+                    }
                 }
 
                 &:hover {
                     box-shadow: none;
                     cursor: pointer;
-                    background-color: lightgrey
+                    color: #fff;
+
+                    .summary-icon {
+                        color: #fff;
+                    }
                 }
             }
         }
+    }
+
+    .submit-button {
+        background-color: orange;
+        border: none;
+        border-radius: 0;
+        padding: 5px 30px;
+        color: #fff;
+        min-width: 130px;
+
+        &:hover {
+            background-color: green;
+        }
+    }
+
+    .no-weather-data {
+        margin: 1.7em 1em;
     }
 }
 
@@ -93,23 +209,48 @@
             padding: 10px 0;
 
             .today-weather {
+                margin: -0.5em 0 0.2em 0;
+
                 .today-weather-details {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-                    gap: 5px;
+                    gap: 10px;
 
                     .weather-data-card {
                         display: flex;
-                        flex-direction: column;
-                        padding:  20px 4px; 
+                        flex-direction: row;
+                        padding: 8px 20px;
+                        cursor: pointer;
                     }
                 }
             }
 
             .cards-container {
                 grid-template-columns: 1fr 1fr;
+                gap: 10px;
                 margin: 0;
                 padding: 0;
+
+                .card-container {
+                    .weather-info-summary {
+                        .overlay {
+                            .overlay-container {
+                                .weasther-icon-container {
+                                    img {
+                                        height: 50px;
+                                        width: 50px;
+                                    }
+                                }
+
+                                .weather-info-details {
+                                    .weather-info-item {
+                                        margin-bottom: -0.1em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

@@ -6,24 +6,16 @@
   <!--content-section-->
   <section class="content-section">
     <div class="contact-form-container">
-        <p class="form-section-heading">
-          CONTACT FORM
-        </p>
+      <p class="form-section-heading">CONTACT FORM</p>
 
-        
-
-        <!--form-->
-        <form
-          [formGroup]="_contactForm"
-          class="form"
-          id="form"
-          (ngSubmit)="sendMesssage()"
-        >
-
-        <div
-          *ngIf="_responseStatus == true"
-          class="successResponse"
-        >
+      <!--form-->
+      <form
+        [formGroup]="_contactForm"
+        class="form"
+        id="form"
+        (ngSubmit)="sendMesssage()"
+      >
+        <div *ngIf="_responseStatus == true" class="successResponse">
           <fa-icon
             class="brand-icon"
             [icon]="['fas', 'circle-check']"
@@ -31,10 +23,7 @@
           Your message has been sent successfully!
         </div>
 
-        <div
-          *ngIf="_responseStatus == false"
-          class="errorResponse"
-        >
+        <div *ngIf="_responseStatus == false" class="errorResponse">
           <fa-icon
             class="brand-icon"
             [icon]="['fas', 'triangle-exclamation']"
@@ -42,158 +31,152 @@
           Sorry! sending form message failed.
         </div>
 
-        <div
-        *ngIf="_formStatus"
-        class="errorResponse"
-      >
-        <fa-icon
-          class="brand-icon"
-          [icon]="['fas', 'triangle-exclamation']"
-        ></fa-icon>
-        Please provide all the required form details.
-      </div>
-        
+        <div *ngIf="_formStatus" class="errorResponse">
+          <fa-icon
+            class="brand-icon"
+            [icon]="['fas', 'triangle-exclamation']"
+          ></fa-icon>
+          Please provide all the required form details.
+        </div>
+
         <div *ngIf="_loading == true">
           <app-loading-spinner></app-loading-spinner>
         </div>
 
-          <div class="form-group">
-            <input
-              type="text"
-              formControlName="name"
-              id="name"
-              class="form-control form-control-sm form-control-textbox"
-              placeholder="* Full names"
-            />
+        <div class="form-group">
+          <input
+            type="text"
+            formControlName="name"
+            id="name"
+            class="form-control form-control-sm form-control-textbox"
+            placeholder="* Full names"
+          />
 
-            <div
-              *ngIf="name?.touched && name?.invalid"
-              class="form-validation-error-message"
-            >
-              <div *ngIf="name?.errors?.['required']">* Name required</div>
-              <div *ngIf="name?.errors?.['whiteSpace']">
-                * Name cannot contain whitespace
-              </div>
+          <div
+            *ngIf="name?.touched && name?.invalid"
+            class="form-validation-error-message"
+          >
+            <div *ngIf="name?.errors?.['required']">* Name required</div>
+            <div *ngIf="name?.errors?.['whiteSpace']">
+              * Name cannot contain whitespace
+            </div>
 
-              <div *ngIf="name?.errors?.['numeric']">
-                * Name cannot contain numeric values
-              </div>
+            <div *ngIf="name?.errors?.['numeric']">
+              * Name cannot contain numeric values
+            </div>
 
-              <div *ngIf="name?.errors?.['specialCharacter']">
-                * Name cannot contain special chatacters
-              </div>
+            <div *ngIf="name?.errors?.['specialCharacter']">
+              * Name cannot contain special chatacters
             </div>
           </div>
+        </div>
 
-          <div class="form-group">
-            <input
-              type="email"
-              formControlName="email"
-              id="email"
-              class="form-control form-control-sm form-control-textbox"
-              placeholder="* Email address"
-            />
+        <div class="form-group">
+          <input
+            type="email"
+            formControlName="email"
+            id="email"
+            class="form-control form-control-sm form-control-textbox"
+            placeholder="* Email address"
+          />
 
-            <!--Multiple Validation Error messages -->
-            <div
-              *ngIf="email?.touched && email?.invalid"
-              class="form-validation-error-message"
-            >
-              <div *ngIf="email?.errors?.['required']">
-                * Email address required
-              </div>
-              <!-- <div *ngIf="name.errors?.['maxlength']"> First name should have a minimum of 5 characters </div> -->
-              <div *ngIf="email?.errors?.['email']">
-                * Email address format is incorrect
-              </div>
+          <!--Multiple Validation Error messages -->
+          <div
+            *ngIf="email?.touched && email?.invalid"
+            class="form-validation-error-message"
+          >
+            <div *ngIf="email?.errors?.['required']">
+              * Email address required
+            </div>
+            <!-- <div *ngIf="name.errors?.['maxlength']"> First name should have a minimum of 5 characters </div> -->
+            <div *ngIf="email?.errors?.['email']">
+              * Email address format is incorrect
+            </div>
 
-              <div *ngIf="email?.errors?.['emailExist']">
-                * Email address alreay exist
-              </div>
+            <div *ngIf="email?.errors?.['emailExist']">
+              * Email address alreay exist
             </div>
           </div>
+        </div>
 
-          <div class="form-group">
-            <select
-              class="form-control form-select-sm form-control-dropdown"
-              id="subject"
-              formControlName="subject"
-              required
+        <div class="form-group">
+          <select
+            class="form-control form-select-sm form-control-dropdown"
+            id="subject"
+            formControlName="subject"
+            required
+          >
+            <!--Binding selected option-->
+            <option hidden [defaultSelected]="true" [value]="">
+              {{ defaultMessageSubject }}
+            </option>
+
+            <option
+              *ngFor="let subject of messageSubjects"
+              [value]="subject.name"
             >
-              <!--Binding selected option-->
-              <option hidden [defaultSelected]="true" [value]="">
-                {{ defaultMessageSubject }}
-              </option>
+              {{ subject.name }}
+            </option>
+          </select>
 
-              <option
-                *ngFor="let subject of messageSubjects"
-                [value]="subject.name"
-              >
-                {{ subject.name }}
-              </option>
-            </select>
-
-            <!-- validation error message for dropdown -->
-            <div
-              *ngIf="subject?.touched && subject?.invalid"
-              class="form-validation-error-message"
-            >
-              <div *ngIf="subject?.errors?.['required']">
-                * Please select message subject
-              </div>
+          <!-- validation error message for dropdown -->
+          <div
+            *ngIf="subject?.touched && subject?.invalid"
+            class="form-validation-error-message"
+          >
+            <div *ngIf="subject?.errors?.['required']">
+              * Please select message subject
             </div>
           </div>
+        </div>
 
-          <div class="form-group">
-            <textarea
-              type="text"
-              formControlName="message"
-              id="message"
-              rows="3"
-              maxlength="300"
-              class="form-control form-control-sm form-control-textarea"
-              placeholder="* Message"
-            ></textarea>
+        <div class="form-group">
+          <textarea
+            type="text"
+            formControlName="message"
+            id="message"
+            rows="3"
+            maxlength="300"
+            class="form-control form-control-sm form-control-textarea"
+            placeholder="* Message"
+          ></textarea>
 
-            <!--Multiple Validation Error messages -->
-            <div
-              *ngIf="message?.touched && message?.invalid"
-              class="form-validation-error-message"
-            >
-              <div *ngIf="message?.errors?.['required']">
-                * Message required
-              </div>
+          <!--Multiple Validation Error messages -->
+          <div
+            *ngIf="message?.touched && message?.invalid"
+            class="form-validation-error-message"
+          >
+            <div *ngIf="message?.errors?.['required']">* Message required</div>
 
-              <div *ngIf="message?.errors?.['whiteSpace']">
-                * Message cannot contain whitespace
-              </div>
+            <div *ngIf="message?.errors?.['whiteSpace']">
+              * Message cannot contain whitespace
+            </div>
 
-              <div *ngIf="message?.errors?.['minlength']">
-                * Message should have a minimum of
-                {{message?.errors?.['minlength'].requiredLength}}
-                characters
-              </div>
+            <div *ngIf="message?.errors?.['minlength']">
+              * Message should have a minimum of
+              {{message?.errors?.['minlength'].requiredLength}}
+              characters
             </div>
           </div>
+        </div>
 
-          <div class="form-group">
-            <input
-              type="submit"
-              id="submit"
-              value="SUBMIT"
-              class="btn btn-sm submit-button"
-            />
-            <input
-              type="reset"
-              id="reset"
-              value="CLEAR"
-              class="btn btn-sm clear-btn"
-              (click)="clear()"
-            />
-          </div>
-        </form>
-
-      </div>
+        <div class="form-group">
+          <input
+            type="submit"
+            id="submit"
+            value="SUBMIT"
+            class="btn btn-sm submit-button"
+          />
+          <input
+            type="reset"
+            id="reset"
+            value="CLEAR"
+            class="btn btn-sm clear-btn"
+            (click)="clear()"
+          />
+        </div>
+      </form>
+    </div>
 
     <div class="contact-details-container">
       <div class="contact-details">

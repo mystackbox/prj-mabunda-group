@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { WeatherService } from '../../shared/services/weather/weather.service';
 import { Router } from '@angular/router';
+import { GeoLocationService } from '../../shared/services/geo-location/geo-location.service';
 
 @Component({
   selector: 'app-geo-loc-weather',
@@ -10,34 +11,47 @@ import { Router } from '@angular/router';
 })
 export class GeoLocWeatherComponent {
   weatherData: any;
+  latitude: number = 0;
+  longitude: number = 0;
 
-  constructor(private weatherService: WeatherService, private router: Router) {}
+  constructor(private weatherService: WeatherService, private geoLocServicce: GeoLocationService, private router: Router) {}
 
   //fetch weather data
   ngOnInit(): void {
-    this.getGeoLocationWeather();
+    this.startTracking();
+    
+  }
+
+  startTracking() {
+    this.geoLocServicce.startWatching(
+      (position) => {
+        this.latitude = position.coords.latitude;
+        this.longitude = position.coords.longitude;
+        this.getGeoLocationWeather();
+      },
+      (error) => {
+        this.weatherData = null;
+        console.error('Geolocation error:', error.message);
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.geoLocServicce.stopWatching();
   }
 
   //get current geolocation weather
   getGeoLocationWeather() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const { latitude, longitude } = position.coords;
-
-      this.weatherService
-        .getWeatherByGeoLocation(latitude, longitude)
-        .subscribe({
-          next: (data) => {
-            this.weatherData = data;
-          },
-          error: (error) => {
-            console.error('Error fetching weather:', error);
-            throw new error();
-          },
-          complete: () => {
-            console.info('fetching data completed');
-          },
-        });
-    });
+    this.weatherService
+      .getWeatherByGeoLocation(this.latitude, this.longitude)
+      .subscribe({
+        next: (data) => {
+          this.weatherData = data;
+        },
+        error: (error) => {
+        },
+        complete: () => {},
+      });
   }
 
   redirectToWeacther() {

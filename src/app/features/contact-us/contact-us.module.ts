@@ -10,13 +10,13 @@ import {
 import { faCircleCheck, faEnvelope, faLocationDot, faMapLocationDot, faPhone, fas, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { MapComponent } from '../../components/google-map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { LoadingSpinnerComponent } from '../../components/loading-spinner/loading-spinner.component';
 import {  ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../../shared/modules/shared.module';
 
 
 @NgModule({
-  declarations: [ContactUsComponent, MapComponent, LoadingSpinnerComponent],
-  imports: [CommonModule, ContactUsRoutingModule, FontAwesomeModule, GoogleMapsModule, ReactiveFormsModule]
+  declarations: [ContactUsComponent, MapComponent],
+  imports: [SharedModule, CommonModule, ContactUsRoutingModule, FontAwesomeModule, GoogleMapsModule, ReactiveFormsModule]
 })
 export class ContactUsModule {
   //for Font-Awesome to be accessible globally

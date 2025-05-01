@@ -16,6 +16,6 @@
     title="Temperature"
     (click)="redirectToWeacther()"
   >
-    {{ weatherData.main.temp }} °C
+    {{ weatherData.main.temp | number: '1.0-0'}} °C
   </span>
 </div>

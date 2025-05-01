@@ -48,6 +48,7 @@ import { provideHttpClient } from '@angular/common/http';
     NavBarComponent,
     ShareButtonsComponent,
     GeoLocWeatherComponent,
+    
   ],
   imports: [
     BrowserModule,
