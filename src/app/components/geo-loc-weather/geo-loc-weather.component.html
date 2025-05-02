@@ -1,4 +1,4 @@
-<div class="weather-container" *ngIf="weatherData" alt="Weather today">
+<div class="weather-container" *ngIf="(weatherData) && (!geoLocErr) " alt="Weather today">
   <img
     class="weather-img"
     title="{{ weatherData.weather[0].description | titlecase }}"

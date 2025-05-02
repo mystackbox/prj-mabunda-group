@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+import { Meta } from '@angular/platform-browser';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs';
 import { MetaTagService } from '../../shared/services/mata-tags/meta-tags';
@@ -20,7 +20,6 @@ export class HeaderComponent {
   //Injecting services
   constructor(
 
-    private titleService: Title,
     private metaTagService: MetaTagService,
     private _meta: Meta,
     private router: Router,

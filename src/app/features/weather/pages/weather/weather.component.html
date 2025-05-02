@@ -12,123 +12,132 @@
     </div>
   </section>
 
-  <section *ngIf="(geoLocErr?.code != 1) && (responseErr == null)" class="content-section">
-    
-    <div *ngIf="_loading == true">
+  <section *ngIf="!geoLocErr && responseErr == null" class="content-section">
+    <div *ngIf="loading">
       <app-loading-spinner></app-loading-spinner>
-    </div>
-
-    <div class="today-weather">
-      <img
-        class="weather-img"
-        title="{{ weatherData?.weather[0].description | titlecase }}"
-        [src]="
-          'https://openweathermap.org/img/wn/' +
-          weatherData?.weather[0].icon +
-          '@2x.png'
-        "
-        alt="weather condition icon"
-      />
-      <p class="weather-condition"> <strong> {{ weatherData?.weather[0].description | titlecase }} </strong> </p>
-
-      <div class="today-weather-details">
-
-        <div class="weather-data-card">
-          <fa-icon
-            class="title-icon"
-            [icon]="['fas', 'calendar-days']"
-          ></fa-icon>
-          {{ todayDate | date : "dd-MM-yyyy" }}
-        </div>
-        <div class="weather-data-card">
-          <fa-icon
-            class="title-icon"
-            [icon]="['fas', 'location-dot']"
-          ></fa-icon>
-          {{ weatherData?.name }} ({{ weatherData?.sys?.country }})
-        </div>
-        <div class="weather-data-card">
-          <fa-icon
-            class="title-icon"
-            [icon]="['fas', 'temperature-high']"
-          ></fa-icon>
-          {{ weatherData?.main.temp | number : "1.0-0" }} °C
-        </div>
-        <div class="weather-data-card">
-          <fa-icon
-            [class]="'title-icon'"
-            [icon]="['fas', 'droplet']"
-            s
-          ></fa-icon>
-          {{ weatherData?.main.humidity | number : "1.0-0" }}%
-        </div>
-
+      <div class="today-weather wih-loading">
       </div>
     </div>
 
-    <hr class="content-description-underline" />
-    <p>Please note that the weather forecast below is based on three-hours-difference </p>
-    
-    <div class="cards-container">
-      
-      <div *ngFor="let forecast of forecastData">
-        <div class="card-container">
-          <div class="weather-info-summary">
-            <fa-icon [class]="'summary-icon'"  [icon]="['fas', 'calendar-days']"></fa-icon>
-            <div class="weather-summary-item">
-              {{ forecast?.dt_txt.split(" ")[0] }}
-            </div>
-            <div class="weather-summary-item">
-              {{ forecast?.dt_txt.split(" ")[1] }}
-            </div>
+    <div *ngIf="!loading">
+      <div class="today-weather">
+        <img
+          class="weather-img"
+          title="{{ weatherData?.weather[0].description | titlecase }}"
+          [src]="
+            'https://openweathermap.org/img/wn/' +
+            weatherData?.weather[0].icon +
+            '@2x.png'
+          "
+          alt="weather condition icon"
+        />
+        <p class="weather-condition">
+          <strong>
+            {{ weatherData?.weather[0].description | titlecase }}
+          </strong>
+        </p>
 
-            <div class="overlay">
-              <div class="overlay-container">
-                <div class="weasther-icon-container">
-                  <img
-                    class="weather-img"
-                    title="{{ forecast?.weather[0].description | titlecase }}"
-                    [src]="
-                      'https://openweathermap.org/img/wn/' +
-                      forecast.weather[0].icon +
-                      '@2x.png'
-                    "
-                    alt="weather"
-                  />
-                </div>
+        <div class="today-weather-details">
+          <div class="weather-data-card">
+            <fa-icon
+              class="title-icon"
+              [icon]="['fas', 'calendar-days']"
+            ></fa-icon>
+            {{ todayDate | date : "dd-MM-yyyy" }}
+          </div>
+          <div class="weather-data-card">
+            <fa-icon
+              class="title-icon"
+              [icon]="['fas', 'location-dot']"
+            ></fa-icon>
+            {{ weatherData?.name }} ({{ weatherData?.sys?.country }})
+          </div>
+          <div class="weather-data-card">
+            <fa-icon
+              class="title-icon"
+              [icon]="['fas', 'temperature-high']"
+            ></fa-icon>
+            {{ weatherData?.main.temp | number : "1.0-0" }} °C
+          </div>
+          <div class="weather-data-card">
+            <fa-icon
+              [class]="'title-icon'"
+              [icon]="['fas', 'droplet']"
+              s
+            ></fa-icon>
+            {{ weatherData?.main.humidity | number : "1.0-0" }}%
+          </div>
+        </div>
+      </div>
+      <hr class="content-description-underline" />
+      <p class="under-statement">
+        Please note that the weather forecast below is based on
+        three-hours-difference
+      </p>
 
-                <div class="weather-info-details">
-                  <div class="weather-info-item">
-                    <strong>{{
-                      forecast?.weather[0].description | titlecase
-                    }}</strong>
+      <div class="cards-container">
+        <div *ngFor="let forecast of forecastData">
+          <div class="card-container">
+            <div class="weather-info-summary">
+              <fa-icon
+                [class]="'summary-icon'"
+                [icon]="['fas', 'calendar-days']"
+              ></fa-icon>
+              <div class="weather-summary-item">
+                {{ forecast?.dt_txt.split(" ")[0] }}
+              </div>
+              <div class="weather-summary-item">
+                {{ forecast?.dt_txt.split(" ")[1] }}
+              </div>
+
+              <div class="overlay">
+                <div class="overlay-container">
+                  <div class="weasther-icon-container">
+                    <img
+                      class="weather-img"
+                      title="{{ forecast?.weather[0].description | titlecase }}"
+                      [src]="
+                        'https://openweathermap.org/img/wn/' +
+                        forecast.weather[0].icon +
+                        '@2x.png'
+                      "
+                      alt="weather"
+                    />
                   </div>
 
-                  <div class="weather-info-item">
-                    <fa-icon
-                      [class]="'weather-details-icon'"
-                      [icon]="['fas', 'temperature-high']"
-                      size="xs"
-                    ></fa-icon>
-                    {{ forecast?.main?.temp | number : "1.0-0" }}°C
-                  </div>
+                  <div class="weather-info-details">
+                    <div class="weather-info-item">
+                      <strong>{{
+                        forecast?.weather[0].description | titlecase
+                      }}</strong>
+                    </div>
 
-                  <div class="weather-info-item third">
-                    <fa-icon
-                      [class]="'weather-details-icon'"
-                      [icon]="['fas', 'gauge']"
-                      size="xs"
-                    ></fa-icon>
-                    {{ forecast?.wind?.speed }}M/s
-                  </div>
+                    <div class="weather-info-item">
+                      <fa-icon
+                        [class]="'weather-details-icon'"
+                        [icon]="['fas', 'temperature-high']"
+                        size="xs"
+                      ></fa-icon>
+                      {{ forecast?.main?.temp | number : "1.0-0" }}°C
+                    </div>
 
-                  <div class="weather-info-item fouth">
-                    <fa-icon
-                      [class]="'weather-details-icon'"
-                      [icon]="['fas', 'droplet']"
-                      size="xs"
-                    ></fa-icon>
-                    {{ forecast?.main?.humidity | number : "1.0-0" }}%
+                    <div class="weather-info-item third">
+                      <fa-icon
+                        [class]="'weather-details-icon'"
+                        [icon]="['fas', 'gauge']"
+                        size="xs"
+                      ></fa-icon>
+                      {{ forecast?.wind?.speed }}M/s
+                    </div>
+
+                    <div class="weather-info-item fouth">
+                      <fa-icon
+                        [class]="'weather-details-icon'"
+                        [icon]="['fas', 'droplet']"
+                        size="xs"
+                      ></fa-icon>
+                      {{ forecast?.main?.humidity | number : "1.0-0" }}%
+                    </div>
                   </div>
                 </div>
               </div>
@@ -136,20 +145,23 @@
           </div>
         </div>
       </div>
+
     </div>
+
 
   </section>
 
-  <div *ngIf="responseErr != null" class="no-weather-data">
-    <h4>{{responseErr}}</h4>
+  <div *ngIf="responseErr" class="no-weather-data">
+    <h4>{{ responseErr }}</h4>
     <p>
-      Forecast weather information could not be retrieved due to server-related error.
+      Forecast weather information could not be retrieved due to server-related
+      error.
     </p>
     <p>
       Please ensure that your device is connected to the internet, then refresh
       your browser.
     </p>
-    <p>If  error persists, contact the system administrator.</p>
+    <p>If error persists, contact the system administrator.</p>
     <p>
       <input
         type="submit"
@@ -161,16 +173,23 @@
     </p>
   </div>
 
-  <div *ngIf="geoLocErr?.code == 1" class="no-weather-data">
-    <h4>{{geoLocErr?.message}}</h4>
+  <div *ngIf="geoLocErr" class="no-weather-data">
+    <fa-icon
+      class="title-icon"
+      [icon]="['fas', 'location-dot']"
+      size="xl"
+    ></fa-icon>
+    <h4>{{ geoLocErr }}</h4>
     <hr class="content-description-underline" />
     <p>
-      Sorry, We could not fetch weather information due to unknown device current geolocation.
+      Sorry, We could not fetch weather information due to unknown device
+      current geolocation.
     </p>
     <p>
-      Please ensure that your device is set to allow geolocation requests for this application
+      Please ensure that your device is set to allow geolocation requests for
+      this application
     </p>
-    <p>If  error persists, contact the system administrator.</p>
+    <p>If error persists, contact the system administrator.</p>
     <p>
       <input
         type="submit"
@@ -181,5 +200,4 @@
       />
     </p>
   </div>
-
 </div>

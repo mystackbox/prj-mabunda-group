@@ -20,12 +20,16 @@
         row-gap: 10px;
         position: relative;
 
-        .spinner-text {
-            font-weight: bold;
-            color: #fff;
-            font-size: 16px;
+        .spinner { 
+            padding-top: 80px;
         }
 
+        .wih-loading {
+            padding: 100px 0;
+            font-weight: bolder;
+            color: lightgray;
+        }
+       
         .today-weather {
             text-align: center;
 
@@ -74,6 +78,10 @@
             width: 60%;
             margin: 15px auto;
             font-weight: bolder;
+        }
+
+        .under-statement {
+            padding: 0 20px;
         }
 
         .cards-container {
@@ -196,6 +204,10 @@
 
     .no-weather-data {
         margin: 1.7em 1em;
+        h4 {
+            margin-top: 5px;
+            color: green;
+        }
     }
 }
 

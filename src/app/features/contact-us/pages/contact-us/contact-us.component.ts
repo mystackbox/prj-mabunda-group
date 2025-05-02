@@ -72,8 +72,6 @@ export class ContactUsComponent {
     Swal.fire({
       title: 'Are you sure?',
       text: 'You want to submit the form?',
-      icon: 'warning',
-      iconColor: 'red',
       showCancelButton: true,
       confirmButtonText: 'Submit',
       confirmButtonColor: 'red',
@@ -104,7 +102,7 @@ export class ContactUsComponent {
           );
         this._loading = false;
 
-        Swal.fire('Successful!', 'Your form has been submitted.', 'success');
+        Swal.fire('Successful!', 'Your form has been submitted.');
       }
     });
   }

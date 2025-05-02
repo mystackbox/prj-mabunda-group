@@ -15,13 +15,6 @@
         id="form"
         (ngSubmit)="sendMesssage()"
       >
-        <div *ngIf="_responseStatus == true" class="successResponse">
-          <fa-icon
-            class="brand-icon"
-            [icon]="['fas', 'circle-check']"
-          ></fa-icon>
-          Your message has been sent successfully!
-        </div>
 
         <div *ngIf="_responseStatus == false" class="errorResponse">
           <fa-icon
