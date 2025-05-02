@@ -73,11 +73,11 @@ export class ContactUsComponent implements ComponentCanDeactivate {
 
     Swal.fire({
       title: 'Are you sure?',
-      text: 'You want to submit the form?',
+      text: 'You want to submit the form.',
       showCancelButton: true,
-      confirmButtonText: 'Submit',
-      confirmButtonColor: 'red',
-      cancelButtonText: 'Cancel',
+      confirmButtonText: 'Yes',
+      confirmButtonColor: '#FF0000',
+      cancelButtonText: 'No',
       cancelButtonColor: '#20B2AA',
     }).then(async (result) => {
       if (result.isConfirmed) {
@@ -108,16 +108,16 @@ export class ContactUsComponent implements ComponentCanDeactivate {
   }
 
   canDeactivateContact(): Observable<boolean> | Promise<boolean> | boolean {
-    if (!this._contactForm.dirty && this._isSubmitted == true) {
+    if (!this._contactForm.dirty && this._isSubmitted == false) {
       return true;
     }
 
     return Swal.fire({
       title: 'Are you sure?',
-      text: 'You want to discard the changes?',
+      text: 'You want to discard the changes.',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#FF0000',
+      cancelButtonColor: '#20B2AA',
       confirmButtonText: 'Yes',
       cancelButtonText: 'No',
     }).then((result) => result.isConfirmed);
