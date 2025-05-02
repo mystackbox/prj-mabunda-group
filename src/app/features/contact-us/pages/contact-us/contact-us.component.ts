@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import Swal from 'sweetalert2';
+import { Observable, of } from 'rxjs';
+import { ComponentCanDeactivate } from '../../../../shared/route-guards/canDeactivate/can-deactivate.guard';
 
 @Component({
   selector: 'app-contact-us',
@@ -9,7 +11,7 @@ import Swal from 'sweetalert2';
   styleUrl: './contact-us.component.scss',
   standalone: false,
 })
-export class ContactUsComponent {
+export class ContactUsComponent implements ComponentCanDeactivate {
   //local variables
   _contactForm!: FormGroup;
   _responseStatus: any = undefined;
@@ -17,8 +19,7 @@ export class ContactUsComponent {
   _loading: boolean = false;
   defaultMessageSubject: string = '';
   messageSubjects: any;
-
-  constructor() {}
+  _isSubmitted = false;
 
   ngOnInit(): void {
     this._loading = false;
@@ -64,6 +65,7 @@ export class ContactUsComponent {
 
   //send form data to mailjs service
   sendMesssage() {
+    this._isSubmitted = true;
     if (this._contactForm.invalid) {
       this._formStatus = true;
       return;
@@ -78,9 +80,7 @@ export class ContactUsComponent {
       cancelButtonText: 'Cancel',
       cancelButtonColor: '#20B2AA',
     }).then(async (result) => {
-
       if (result.isConfirmed) {
-        
         const form = this._contactForm.value;
         this._loading = true;
 
@@ -105,6 +105,22 @@ export class ContactUsComponent {
         Swal.fire('Successful!', 'Your form has been submitted.');
       }
     });
+  }
+
+  canDeactivateContact(): Observable<boolean> | Promise<boolean> | boolean {
+    if (!this._contactForm.dirty && this._isSubmitted == true) {
+      return true;
+    }
+
+    return Swal.fire({
+      title: 'Are you sure?',
+      text: 'You want to discard the changes?',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No',
+    }).then((result) => result.isConfirmed);
   }
 
   //clear or reset variables
