@@ -31,19 +31,19 @@
                 border-radius: 7px;
                 margin: 0 5px;
 
-                .card-icon, .card-text, .services {
+                .card-icon, .card-header-text .services {
                     margin-bottom: 10px;
                 } 
 
                 .card-icon {
-                    color: $icon-color;
+                    color: var(--services-card-icon-color);
                 }
 
-                .card-text {
+                .card-header-text  {
                     text-transform: uppercase;
                     font-size: 12px;
                     font-weight: bold;
-                    color: olivedrab;
+                    color: var(--card-header-text-color);
                 }
 
                 .services {

@@ -28,9 +28,7 @@ import {
   FaIconLibrary,
   FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome';
-import {
-  faPhone,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCircleHalfStroke, faEllipsisVertical, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 //socia media share buttons package - [ ngx-sharebuttons]
 import { ShareButtons } from 'ngx-sharebuttons/buttons';
@@ -48,7 +46,6 @@ import { provideHttpClient } from '@angular/common/http';
     NavBarComponent,
     ShareButtonsComponent,
     GeoLocWeatherComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -56,10 +53,8 @@ import { provideHttpClient } from '@angular/common/http';
     ShareButtons,
     CommonModule,
     FontAwesomeModule,
-
   ],
   providers: [
-    
     //Url requests - structure
     {
       provide: LocationStrategy,
@@ -68,7 +63,7 @@ import { provideHttpClient } from '@angular/common/http';
     Title,
     provideClientHydration(withEventReplay()),
     provideShareButtonsOptions(shareIcons()),
-    provideHttpClient()
+    provideHttpClient(),
   ],
 
   bootstrap: [AppComponent],
@@ -76,6 +71,6 @@ import { provideHttpClient } from '@angular/common/http';
 export class AppModule {
   //for Font-Awesome to be accessible globally
   constructor(library: FaIconLibrary) {
-    library.addIcons(faPhone);
+    library.addIcons(faPhone, faCircleHalfStroke);
   }
 }

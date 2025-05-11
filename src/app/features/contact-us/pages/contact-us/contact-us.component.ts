@@ -23,7 +23,7 @@ export class ContactUsComponent implements ComponentCanDeactivate {
 
   ngOnInit(): void {
     this._loading = false;
-    this.defaultMessageSubject = '--- select message subject ---';
+    this.defaultMessageSubject = '* --- Subject ---';
 
     this.messageSubjects = [
       { id: 1, name: 'EHS services related query' },
@@ -126,7 +126,8 @@ export class ContactUsComponent implements ComponentCanDeactivate {
   //clear or reset variables
   clear() {
     this._responseStatus = undefined;
-    this.defaultMessageSubject = '--- select message subject ---';
+    this.defaultMessageSubject = '* --- Subject ---';
     this._formStatus = false;
+    this._contactForm.reset();
   }
 }

@@ -13,10 +13,10 @@
   </section>
 
   <section *ngIf="!geoLocErr && responseErr == null" class="content-section">
-    <div *ngIf="loading">
+
+    <div *ngIf="loading" class="loading">
       <app-loading-spinner></app-loading-spinner>
-      <div class="today-weather wih-loading">
-      </div>
+      <p class="spinner-text" alt="spinner-text"> LOADING </p>
     </div>
 
     <div *ngIf="!loading">
@@ -71,8 +71,8 @@
       </div>
       <hr class="content-description-underline" />
       <p class="under-statement">
-        Please note that the weather forecast below is based on
-        three-hours-difference
+        Please note that below is a
+        three-hours-difference weather forecast.
       </p>
 
       <div class="cards-container">
@@ -83,7 +83,7 @@
                 [class]="'summary-icon'"
                 [icon]="['fas', 'calendar-days']"
               ></fa-icon>
-              <div class="weather-summary-item">
+              <div class="weather-summary-item summary-item-clock ">
                 {{ forecast?.dt_txt.split(" ")[0] }}
               </div>
               <div class="weather-summary-item">
@@ -106,10 +106,10 @@
                   </div>
 
                   <div class="weather-info-details">
-                    <div class="weather-info-item">
-                      <strong>{{
+                    <div class="weather-info-item info-item-heading ">
+                      {{
                         forecast?.weather[0].description | titlecase
-                      }}</strong>
+                      }}
                     </div>
 
                     <div class="weather-info-item">
@@ -121,7 +121,7 @@
                       {{ forecast?.main?.temp | number : "1.0-0" }}°C
                     </div>
 
-                    <div class="weather-info-item third">
+                    <div class="weather-info-item">
                       <fa-icon
                         [class]="'weather-details-icon'"
                         [icon]="['fas', 'gauge']"
@@ -130,7 +130,7 @@
                       {{ forecast?.wind?.speed }}M/s
                     </div>
 
-                    <div class="weather-info-item fouth">
+                    <div class="weather-info-item">
                       <fa-icon
                         [class]="'weather-details-icon'"
                         [icon]="['fas', 'droplet']"
@@ -148,8 +148,9 @@
 
     </div>
 
-
   </section>
+
+  <!--error display section -->
 
   <div *ngIf="responseErr" class="no-weather-data">
     <h4>{{ responseErr }}</h4>

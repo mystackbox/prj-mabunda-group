@@ -153,7 +153,7 @@ const routes: Routes = [
             seo: {
               title: 'Our Services',
               metaTags: [
-                { name: 'short-desc', content: 'Addressing our clients needs' },
+                { name: 'short-desc', content: 'professional EHS and Engineering' },
                 { name: 'keywords', content: 'Environmental Health, Environmental Safety, Electrical Engineering, Electronics Engineering, Fire Services, EHS Training Services, Fire Training Services' },
                 { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
                 { name: 'robots', content: 'index, follow'},
@@ -196,7 +196,7 @@ const routes: Routes = [
             seo: {
               title: 'Gallery',
               metaTags: [
-                { name: 'short-desc', content: 'Our successful projects' },
+                { name: 'short-desc', content: 'Our recent success stories' },
                 { name: 'keywords', content: 'Gallery, Mabunda Gallery, Mabunda Group Gallery, Mabunda Group Projects, Mabunda Group Recent Projects'},
                 { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
                 { name: 'robots', content: 'index, follow'},
@@ -281,7 +281,7 @@ const routes: Routes = [
             seo: {
               title: 'Weather',
               metaTags: [
-                { name: 'short-desc', content: 'Your weather forecast today' },
+                { name: 'short-desc', content: 'Your weather forecast' },
                 { name: 'keywords', content: 'Get in touch, Contact Us, Call us now, We are here, Send us queries, Forward your queries'},
                 { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
                 { name: 'robots', content: 'index, follow'},

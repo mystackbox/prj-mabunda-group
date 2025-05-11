@@ -37,26 +37,25 @@
 
                 .card-icon {
                     margin-bottom: 15px;
-                    color: $icon-color;
+                    color: var(--home-card-icon-color);
                 }
 
                 .card-text {
                     text-transform: uppercase;
                     font-size: 12px;
-
                 }
 
                 .card-btn {
-                    background-color: yellowgreen;
+                    background-color: var(--home-card-btn-bg-color);
                     border: none; 
                     border-radius: 6px;
                     padding: 3px 20px;
-                    color: #fff;
+                    color: var(--home-card-btn-color);
                     max-width: 100%;
                     margin-top: 15px;
                    
                     &:hover {
-                        background-color: red;
+                        background-color: var(--background-color);
                     }
                 }
 

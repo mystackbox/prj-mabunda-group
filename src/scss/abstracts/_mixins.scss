@@ -28,7 +28,7 @@
   .page-title {
     font-size: $global-font-size + 6px;
     font-weight: bold;
-    color: green;
+    color: var(--text-color);
   }
 
 }
@@ -37,7 +37,7 @@
   background-size: cover;
   box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 24px;
   padding: 30px;
-  border: 6px solid white;
+  border: 6px solid var(--header-banner-border-color);
   text-transform: uppercase;
   color: #fff;
 
@@ -46,7 +46,7 @@
   }
 
   .title-name {
-    font-size: $global-font-size + 4px;
+    font-size: $global-font-size;
     padding: 8px 0;
   }
 
@@ -71,6 +71,8 @@
   .content-title {
     margin-bottom: 15px;
     text-transform: uppercase;
+    color: var(--text-color);
+    font-weight: bold;
   }
 
   .content-description {

@@ -254,7 +254,7 @@ body {
   min-height: 16vh;
 }
 #home-page-container .content-section .cards-container .card-container .card-image,
-#home-page-container .content-section .cards-container .card-container .card-text,
+#home-page-container .content-section .cards-container .card-container .card-header-text
 #home-page-container .content-section .cards-container .card-container .card-btn {
   margin: 8px 0;
 }
@@ -380,7 +380,7 @@ body {
   margin-bottom: 5px;
 }
 #about-page-container .content-section .card-container .card-image,
-#about-page-container .content-section .card-container .card-text,
+#about-page-container .content-section .card-container .card-header-text
 #about-page-container .content-section .card-container .card-btn {
   margin: 8px 0;
 }
@@ -490,7 +490,7 @@ body {
   margin: 0 15px;
 }
 #services-page-container .content-section .cards-container .card-container .card-image,
-#services-page-container .content-section .cards-container .card-container .card-text,
+#services-page-container .content-section .cards-container .card-container .card-header-text
 #services-page-container .content-section .cards-container .card-container .card-btn {
   margin: 5px 0;
 }
@@ -738,7 +738,7 @@ body {
   margin-bottom: 5px;
 }
 #notfound-page-container .content-section .card-container .card-image,
-#notfound-page-container .content-section .card-container .card-text,
+#notfound-page-container .content-section .card-container .card-header-text
 #notfound-page-container .content-section .card-container .card-btn {
   margin: 8px 0;
 }

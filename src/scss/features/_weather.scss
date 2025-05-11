@@ -20,26 +20,35 @@
         row-gap: 10px;
         position: relative;
 
-        .spinner { 
-            padding-top: 80px;
-        }
+        .loading{
+            
+            padding: 50px 0;
+            margin-top: 25px;
 
-        .wih-loading {
-            padding: 100px 0;
-            font-weight: bolder;
-            color: lightgray;
+                img {
+                height: 50px;
+              }
+            
+              .spinner-text {
+                margin-top: 60px;
+                color: lightgray;
+                font-size: 16px;
+                font-weight:400;
+              }
         }
        
+        /* weather section */
         .today-weather {
             text-align: center;
 
             .weather-img {
-                margin: -1em 0 -1.5em 0;
+                margin: 0.3em 0 -1.2em 0;
             }
 
             .weather-condition {
-                color: green;
+                color: var(--weather-condition-text-color);
             }
+
             .today-weather-details {
                 display: grid;
                 grid-template-columns: auto auto auto auto;
@@ -48,22 +57,24 @@
 
                 .weather-data-card {
                     padding: 5px 20px;
-                    color: grey;
-                    background-color: #f8f9fa;
                     border-radius: 6px;
                     min-width: 150px;
 
+                    font-size: var(--text-size);
+                    color: var(--text-color);
+                    background-color: var(--bg-color);
+
                     .title-icon {
                         margin-right: 3px;
-                        color: green;
+                        color: var(--text-color);
                     }
 
                     &:hover {
-                        background-color: red;
-                        color: white;
+                        color: var(--text-color);
+                        background-color: var(--bg-color);
 
                         .title-icon {
-                            color: white;
+                            color: var(--text-color);
                         }
                     }
                 }
@@ -84,6 +95,7 @@
             padding: 0 20px;
         }
 
+        /* forecast section */
         .cards-container {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -99,18 +111,17 @@
                 box-shadow: rgba(149, 157, 165, 0.5) 0px 0px 24px;
                 cursor: pointer;
 
-                .weather-img {
-                    height: 50px;
-                    width: 50px;
-                    color: greenyellow;
-                }
-
                 .weather-info-summary {
                     padding: 15px;
                     position: relative;
 
                     .summary-icon {
-                        color: green;
+                        color: var( --card-summary-icon-color);
+                        margin-bottom: 5px;
+                    }
+
+                    .summary-item-clock {
+                        font-weight: bolder;
                     }
 
                     .weather-summary-item {
@@ -160,10 +171,15 @@
                                 flex-direction: column;
 
                                 .weather-info-item {
-                                    font-size: 10px;
+                                    font-size: 12px;
                                     align-items: center;
                                     display: flex;
                                     column-gap: 5px;
+                                }
+
+                                .info-item-heading {
+                                    margin-top: 5px;
+                                    font-weight: bold;
                                 }
                             }
 
@@ -179,10 +195,10 @@
                 &:hover {
                     box-shadow: none;
                     cursor: pointer;
-                    color: #fff;
+                    color: var( --card-container-text-color);
 
                     .summary-icon {
-                        color: #fff;
+                        color: var(--card-container-icon-color);
                     }
                 }
             }
@@ -233,6 +249,7 @@
                         flex-direction: row;
                         padding: 8px 20px;
                         cursor: pointer;
+                        font-size: $global-font-size;
                     }
                 }
             }
