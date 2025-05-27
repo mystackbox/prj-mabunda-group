@@ -14,26 +14,43 @@
 
 # Introduction
 
-Mobile-friendly angular 2+ website developed using lazy-loading approach to enhance site-performance. CSS Grid-layout and Flexbox models were implemented to achiece the responsive UI design of this site. 
+A mobile-friendly angular 2+ website developed using latest web development technologies such as HTML5, CSS Grid-layout and Flexbox models, together with the implemetation of Angular concepts such as Lazy-loading, SSR, to enhance the performance and search angine optimization.
 
 
 [Back to top](#table-of-contents)
 
 # Environment
 
-- Operating System - Windows 11
-- Angular CLI - v18.2.11
+- Operating System - Windows 11 x64
+- Angular CLI - v19.2.7
 - Visual Studio Code
 - Node.js - v20.11.1
 - GitHub & Git Bash
+- Angular DevTool
+- Postman
 
 [Back to top](#table-of-contents)
 
 # Tech stack
-- Responsive Web Design (HTML5, SCSS, Bootstrap5, FontAwesome, Lazy-loading).
-- Angular/Typescript framework - v18.2.11
-- Fetch API - v18.2.11
-- Google Maps
+- Responsive Web Design ( HTML5 | SCSS | Grid Layout | Flexbox model | Bootstrap5 | FontAwesome | SweetAlert2 | Toggle theme ).
+- Angular/Typescript framework - v18.2.11  
+  - Module-Based Approach (not stand-alone components)
+  - Angular Routing:
+    - Child routes
+    - Lazy-loading
+  - SEO (Angular Universal | Title Interface  | Meta Interface)
+- APIs Integration
+  - Google Maps
+  - Weather forecast (realtime data)
+  - MailJs
+  - Social media share buttons
+- Features:
+  - Weather forecast (realtime data)
+  - Gallery
+  - Toggle themes (Dark vs Light)
+  - Validated submission form (email integrated)
+  - Social Media Share Buttons (Open Graphs | Meta Interface)
+
 
 [Back to top](#table-of-contents)
 
@@ -71,7 +88,8 @@ Once the `localhost` server is running, navigate to `http://localhost:4200/` or 
 [Back to top](#table-of-contents)
 
 # Issues
-- The application uses Google Maps services which requires the APK Key.
+- The application uses Google Maps services which requires the APK Key. This means that you will to have a Google Maps API Key for Google Maps to launch.
+- Unit Testing has not been implemented yet.
 
 [Back to top](#table-of-contents)
 
