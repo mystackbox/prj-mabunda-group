@@ -7,15 +7,17 @@ import {
   FaIconLibrary,
   FontAwesomeModule,
 } from '@fortawesome/angular-fontawesome';
-import { faEnvelope, faLocationDot, faMapLocationDot, faPhone, fas } from '@fortawesome/free-solid-svg-icons';
+import { faCircleCheck, faEnvelope, faLocationDot, faMapLocationDot, faPhone, fas, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { MapComponent } from '../../components/google-map/map.component';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { LoadingSpinnerComponent } from '../../components/loading-spinner/loading-spinner.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../../shared/modules/shared.module';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
 
 @NgModule({
-  declarations: [ContactUsComponent, MapComponent, LoadingSpinnerComponent,],
-  imports: [CommonModule, ContactUsRoutingModule, FontAwesomeModule, GoogleMapsModule, ReactiveFormsModule],
+  declarations: [ContactUsComponent, MapComponent],
+  imports: [SharedModule, CommonModule, ContactUsRoutingModule, FontAwesomeModule, GoogleMapsModule, ReactiveFormsModule, SweetAlert2Module]
 })
 export class ContactUsModule {
   //for Font-Awesome to be accessible globally
@@ -23,7 +25,9 @@ export class ContactUsModule {
       library.addIcons(
         faPhone,
         faEnvelope,
-        faLocationDot
+        faLocationDot,
+        faCircleCheck,
+        faTriangleExclamation
       );
   }
 }

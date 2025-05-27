@@ -1,47 +1,56 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <nav class="navbar navbar-expand-lg ">
-    <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a
+          class="nav-link"
+          id="home-link"
+          aria-current="page"
+          routerLink="/home"
+        >
+          Home</a
+        >
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <a class="nav-link" id="about-link" routerLink="/about-us">
+          About Us
+        </a>
 
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a
-            class="nav-link"
-            id="home-link"
-            aria-current="page"
-            routerLink="/home"
-          >
-            Home</a
-          >
+        <a class="nav-link" id="services-link" routerLink="/our-services">
+          Our Services
+        </a>
 
-          <a class="nav-link" id="about-link" routerLink="/about-us">
-            About Us
-          </a>
+        <a class="nav-link" id="gallery-link" routerLink="/gallery">
+          Gallery
+        </a>
 
-          <a class="nav-link" id="services-link" routerLink="/our-services">
-            Our Services
-          </a>
+        <a class="nav-link" id="weather-link" routerLink="/weather">
+          Weather
+        </a>
 
-          <a class="nav-link" id="gallery-link" routerLink="/gallery">
-            Gallery
-          </a>
-
-          <a class="nav-link" id="contact-link" routerLink="/contact-us">
-            Contact Us
-          </a>
-        </div>
+        <a class="nav-link" id="contact-link" routerLink="/contact-us">
+          Contact Us
+        </a>
       </div>
-
     </div>
-  </nav>
+
+    <div class="d-flex theme-containter" alt="Theme" title="Theme" (click)="toggleTheme()"> 
+      <fa-icon
+        class="card-icon"
+        [icon]="['fas', 'circle-half-stroke']"
+        size="lg"
+      ></fa-icon>
+    </div> 
+  </div>
+</nav>

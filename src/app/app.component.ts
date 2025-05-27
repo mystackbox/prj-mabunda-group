@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { filter, map, mergeMap } from 'rxjs';
-import { MetaTagService } from './shared/services/mata-tags/meta-tags';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +8,8 @@ import { MetaTagService } from './shared/services/mata-tags/meta-tags';
 })
 export class AppComponent {
 
-  //Injecting services
-  constructor(
-  ) {}
+  ngOnIninti(): void{
+    console.log('Launched - App');
+  }
+
 }

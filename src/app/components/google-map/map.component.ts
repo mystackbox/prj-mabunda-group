@@ -10,6 +10,7 @@ export class MapComponent {
 
   center: google.maps.LatLngLiteral = { lat: -25.749, lng: 28.0947 };
   zoom = 10;
+  
 
   options: google.maps.MapOptions = {
     center: { lat: -25.749, lng: 28.0947 },
@@ -51,6 +52,8 @@ marker = {
       lat: -25.749240973127016, lng: 28.094779265449265
     }
   }; 
+
+
 };
 
 

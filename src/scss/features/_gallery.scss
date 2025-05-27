@@ -20,7 +20,7 @@
             display: inline-block;
 
             .ngx-gallery-thumbnails .ngx-gallery-thumbnail {
-                border: 5px solid lightgray;
+                border: 5px solid var( --thumbnail-border-color);
             }
         }
     }

@@ -1,0 +1,17 @@
+<div class="weather-container" *ngIf="(weatherData) && (!geoLocErr) " alt="Weather today">
+  <img
+    class="weather-img"
+    title="{{ weatherData.weather[0].description | titlecase }}" [src]="'https://openweathermap.org/img/wn/' + weatherData.weather[0].icon +'@2x.png'"
+    alt="weather"
+    (click)="redirectToWeacther()"
+  />
+  <span
+    class="temperature"
+    alt="temperature"
+    title="Temperature"
+    (click)="redirectToWeacther()"
+  >
+    {{ weatherData.main.temp | number: '1.0-0'}}°C
+  </span>
+  
+</div>

@@ -28,7 +28,7 @@ export class GalleryComponent {
         image: false,
         thumbnailsRemainingCount: true,
         thumbnailsColumns: 3,
-        thumbnailsRows: 2,
+        thumbnailsRows: 3,
         height: '310px',
         width: '90%',
         imageSwipe: true,
@@ -36,17 +36,17 @@ export class GalleryComponent {
       },
       {
         breakpoint: 480,
-        height: '180px',
+        height: '220px',
         width: '100%',
       },
       {
         breakpoint: 690,
-        height: '240px',
+        height: '260px',
         width: '100%',
       },
       {
         breakpoint: 786,
-        height: '240px',
+        height: '310px',
         width: '100%',
       },
     ];

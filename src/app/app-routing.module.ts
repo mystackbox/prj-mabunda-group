@@ -25,6 +25,7 @@ const routes: Routes = [
             title: 'Welcome',
             metaTags: [
               { name: 'short-desc', content: 'EHS & Engineering Specialists' },
+              { name: 'keywords', content: 'Welcome to Mabunda Group, Mabunda Group, Your EHS & Engineering Specialists, OHS, Engineering' },
               { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
               { name: 'robots', content: 'index, follow'},
               { property: 'article:author', content: 'Yingisani'},
@@ -67,6 +68,7 @@ const routes: Routes = [
               title: 'Welcome',
               metaTags: [
                 { name: 'short-desc', content: 'EHS & Engineering Specialists' },
+                { name: 'keywords', content: 'Welcome to Mabunda Group, Mabunda Group, Your EHS & Engineering Specialists, OHS, Engineering' },
                 { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
                 { name: 'robots', content: 'index, follow'},
                 { property: 'article:author', content: 'Yingisani'},
@@ -109,6 +111,7 @@ const routes: Routes = [
               title: 'About Us',
               metaTags: [
               { name: 'short-desc', content: 'We are committed to serve' },
+              { name: 'keywords', content: 'Your EHS & Engineering Specialists, OHS, Engineering, EHS, Engineering, Specialists, EHS Specialists, Engineering Specialists' },
               { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
               { name: 'robots', content: 'index, follow'},
               { property: 'article:author', content: 'Yingisani'},
@@ -150,7 +153,8 @@ const routes: Routes = [
             seo: {
               title: 'Our Services',
               metaTags: [
-                { name: 'short-desc', content: 'Addressing our clients needs' },
+                { name: 'short-desc', content: 'professional EHS and Engineering' },
+                { name: 'keywords', content: 'Environmental Health, Environmental Safety, Electrical Engineering, Electronics Engineering, Fire Services, EHS Training Services, Fire Training Services' },
                 { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
                 { name: 'robots', content: 'index, follow'},
                 { property: 'article:author', content: 'Yingisani'},
@@ -192,7 +196,8 @@ const routes: Routes = [
             seo: {
               title: 'Gallery',
               metaTags: [
-                { name: 'short-desc', content: 'Our successful projects' },
+                { name: 'short-desc', content: 'Our recent success stories' },
+                { name: 'keywords', content: 'Gallery, Mabunda Gallery, Mabunda Group Gallery, Mabunda Group Projects, Mabunda Group Recent Projects'},
                 { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
                 { name: 'robots', content: 'index, follow'},
                 { property: 'article:author', content: 'Yingisani'},
@@ -235,6 +240,49 @@ const routes: Routes = [
               title: 'Contact Us',
               metaTags: [
                 { name: 'short-desc', content: 'Get in tour with us today!' },
+                { name: 'keywords', content: 'Get in touch, Contact Us, Call us now, We are here, Send us queries, Forward your queries'},
+                { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
+                { name: 'robots', content: 'index, follow'},
+                { property: 'article:author', content: 'Yingisani'},
+  
+                { property: 'og:site_name', content: 'Mabunda Group' },
+                { property: 'og:title', content: 'Your EHS & Engineering Specialists' },
+                { name: 'description', proprety: 'og:description', content: 'EHS and Engineering consulting company, geared to assist the clients to comply with OHS, Environmental, Food Safety and other applicable legislation and to empower all interested and affected stakeholders.' },
+                { property: 'og:type', content: 'Website' },
+                { property: 'og:image', content: environment.appUrl + '/seo-img/share-img.png' },
+                { property: 'og:image:secure_url', content: environment.appUrl + '/seo-img/share-img.png' },
+                { property: 'og:image:tyep', content: 'image/png' },
+                { property: 'og:image:width', content: '1200' },
+                { property: 'og:image:height', content: '630' },
+                { property: 'og:image:alt', content: 'Your EHS & Engineering Specialists' },
+                { property: 'og:url', content: environment.appUrl},
+  
+                { name: 'twitter:card', content: 'Summary'},
+                { name: 'twitter:title', content: 'Your EHS & Engineering Specialists'},
+                { name: 'twitter:description', content: 'EHS and Engineering consulting company, geared to assist the clients to comply with OHS.' },
+                { name: 'twitter:url', content: environment.appUrl},
+                { name: 'twitter:site', content: '@mabundagroup'},
+                { name: 'twitter:creator', content: '@mabundagroup'},
+                { name: 'twitter:image', content: environment.appUrl + '/seo-img/share-img.png' },
+                { name: 'twitter:image:src', content: environment.appUrl + '/seo-img/share-img.png' },
+                { name: 'twitter:image:alt', content: 'Your EHS & Engineering Specialists' },
+              ]
+            }
+          }
+      },
+
+      {
+        path: 'weather',
+        loadChildren: () =>
+          import('./features/weather/weather.module').then(
+            (m): typeof ContactUsModule => m.WeatherModule
+          ),
+          data: {
+            seo: {
+              title: 'Weather',
+              metaTags: [
+                { name: 'short-desc', content: 'Your weather forecast' },
+                { name: 'keywords', content: 'Get in touch, Contact Us, Call us now, We are here, Send us queries, Forward your queries'},
                 { name: 'image', content: environment.appUrl + '/seo-img/share-img.png'  },
                 { name: 'robots', content: 'index, follow'},
                 { property: 'article:author', content: 'Yingisani'},

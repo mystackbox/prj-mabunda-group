@@ -17,7 +17,6 @@ import { faCarrot, faChalkboardUser, faFireExtinguisher, faHandHoldingDroplet, f
   ]
 })
 export class OurServicesModule { 
-    //for Font-Awesome to be accessible globally
     constructor(library: FaIconLibrary) {
        library.addIcons(
             faHandHoldingDroplet,

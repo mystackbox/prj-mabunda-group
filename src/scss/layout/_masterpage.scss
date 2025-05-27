@@ -4,10 +4,15 @@
     Mobile-first approach
 */
 
+
 .master-page-container {
     margin: auto;
     max-width: 900px;
-    color: $global-font-color;
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: var(--text-size);
+    font-family: var(--font-family);
 
     @include element-box-shadow;
 
@@ -24,7 +29,6 @@
 }
 
 .grid-area {
-    background-color: #fff;
     padding: 15px;
 }
 
@@ -32,7 +36,6 @@
 .navbar-container {
     grid-area: navbar;
     padding: 0px;
-    background-color: #f8f9fa;
 }
 
 /* Header Grid Area */
@@ -42,14 +45,13 @@
 
 /* Page Main Area */
 .page-content-container {
-    background-color: #fff;
     grid-area: main;
 }
 
 /* Footer Grid Area */
 .footer-container {
     grid-area: footer;
-    background-color:#2c313c;
+    background-color: var(--bg-color);
     padding: 20px;
-    color: lightgrey;
+    color: var(--text-color);
 }
