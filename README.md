@@ -44,7 +44,7 @@ A mobile-friendly angular 2+ website developed using latest web development tech
 - Features:
   - Weather forecast (realtime data)
   - Gallery
-  - Toggle themes (Dark vs Light)
+  - Themes Toggle (Dark vs Light)
   - Validated submission form (email integrated)
   - Social Media Share Buttons (Open Graphs | Meta Interface)
 
