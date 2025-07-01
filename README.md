@@ -35,9 +35,6 @@ A mobile-friendly angular 2+ website developed using latest web development tech
 - Responsive Web Design ( HTML5 | SCSS | Grid Layout | Flexbox model | Bootstrap5 | FontAwesome | SweetAlert2 | Toggle theme ).
 - Angular/Typescript framework - v18.2.11  
   - Module-Based Approach (not stand-alone components)
-  - Angular Routing:
-    - Child routes
-    - Lazy-loading
   - SEO (Angular Universal | Title Interface  | Meta Interface)
 - APIs Integration
   - Google Maps
